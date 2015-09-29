@@ -38,3 +38,15 @@ header .intro-text .intro-heading {
         line-height: 75px;
     }
 }
+
+/* Map */
+
+.map {
+    height: 500px;
+}
+
+@media(max-width:768px) {
+    .map {
+        height: 75%;
+    }
+}
