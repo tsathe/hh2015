@@ -42,7 +42,8 @@ header .intro-text .intro-heading {
 /* Map */
 
 .map {
-    height: 500px;
+    padding-top: 75%;
+    /*height: 500px;*/
 }
 
 @media(max-width:768px) {
