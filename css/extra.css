@@ -1,3 +1,8 @@
+body {
+    overflow-x: hidden;
+    font-family: "Cardo", serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -36,18 +41,5 @@ header .intro-text .intro-heading {
         font-size: 50px;
         font-weight: 700;
         line-height: 75px;
-    }
-}
-
-/* Map */
-
-.map {
-    padding-top: 75%;
-    /*height: 500px;*/
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
     }
 }
