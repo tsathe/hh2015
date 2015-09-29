@@ -43,8 +43,7 @@ header .intro-text .intro-heading {
 
 .map {
     height: 500px;
-    margin-top: 0;
-    margin-bottom: 0;
+    padding-bottom: 56.25%
 }
 
 @media(max-width:768px) {
