@@ -170,7 +170,12 @@ header .intro-text .intro-heading {
 
 .navbar-default {
     border-color: transparent;
-    background-color: ##01579B;
+    background-color: #01579B;
+}
+
+.navbar-default.navbar-shrink {
+    padding: 10px 0;
+    background-color: #01579B;
 }
 
 .navbar-default .navbar-brand {
@@ -178,4 +183,8 @@ header .intro-text .intro-heading {
     color: #fed136;
     font-weight: 700;
     text-align: center;
+}
+
+.bg-darkest-blue {
+    background-color: #01579B;
 }
