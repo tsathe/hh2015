@@ -23,32 +23,30 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 22px;
     font-style: italic;
     line-height: 22px;
-    text-align: left;
 }
 
 header .intro-text .intro-heading {
     margin-bottom: 25px;
-    text-transform: lowercase;
-    text-align: left;
-    font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 50px;
     font-weight: 700;
-    line-height: 100%;
+    line-height: 50px;
 }
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 200px;
+        padding-top: 300px;
         padding-bottom: 200px;
     }
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 32px;
         font-style: italic;
         line-height: 40px;
@@ -56,27 +54,10 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-heading {
         margin-bottom: 50px;
-        text-transform: lowercase;
-        font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 80px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 64px;
         font-weight: 700;
-        line-height: 100%;
-        text-align: left;
-    }
-}
-
-section h3.section-subheading {
-    margin-bottom: 75px;
-    text-transform: none;
-    font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 140%;
-}
-
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
+        line-height: 75px;
     }
 }
