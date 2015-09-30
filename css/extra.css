@@ -124,7 +124,7 @@ header .intro-text .intro-heading {
 }
 
 .btn-xl {
-    padding: 20px 100px;
+    padding: 20px 40px;
     border-color: #fed136;
     border-radius: 3px;
     text-transform: uppercase;
@@ -133,6 +133,7 @@ header .intro-text .intro-heading {
     font-weight: 700;
     color: #fff;
     background-color: #fed136;
+    margin-right: 40px;
 }
 
 .btn-xl:hover,
