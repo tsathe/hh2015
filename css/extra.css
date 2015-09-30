@@ -72,10 +72,10 @@ header .intro-text {
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     line-height: 22px;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
 }
 
 header .intro-text .intro-heading {
@@ -96,7 +96,7 @@ header .intro-text .intro-heading {
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
         font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
         line-height: 40px;
         letter-spacing: 5px;
