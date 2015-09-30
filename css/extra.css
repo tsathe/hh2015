@@ -16,12 +16,24 @@ section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
     font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 140%;
+
+@media(min-width:768px) {
+
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 24px;
     font-style: italic;
     font-weight: 400;
     line-height: 140%;
 }
 
+}
 @media(min-width:768px) {
     section {
         padding: 150px 0;
