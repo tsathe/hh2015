@@ -16,7 +16,7 @@ header .intro-text .intro-heading {
     text-transform: lowercase;
     text-align: left;
     font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 100px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 100%;
 }
@@ -39,7 +39,7 @@ header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: lowercase;
         font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 50px;
+        font-size: 80px;
         font-weight: 700;
         line-height: 100%;
         text-align: left;
