@@ -14,10 +14,11 @@ header .intro-text .intro-lead-in {
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: lowercase;
+    text-align: left;
     font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 100px;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 100%;
 }
 
 @media(min-width:768px) {
@@ -40,7 +41,8 @@ header .intro-text .intro-heading {
         font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 50px;
         font-weight: 700;
-        line-height: 75px;
+        line-height: 100%;
+        text-align: left;
     }
 }
 
