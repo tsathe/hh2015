@@ -32,9 +32,9 @@ section h3.section-subheading {
   h6 {
       margin-bottom: 50px;
       text-transform: lowercase;
-      font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
       font-size: 80px;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 100%;
   }
 }
