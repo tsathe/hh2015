@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     font-family: "Cardo", serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
 }
 
 h6 {
@@ -16,7 +17,7 @@ section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
     font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-style: italic;
     font-weight: 400;
     line-height: 140%;
