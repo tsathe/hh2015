@@ -55,7 +55,7 @@ header {
     text-align: left;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/header-bg2.png);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -165,6 +165,12 @@ header .intro-text .intro-heading {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
     background-image: none;
+}
+
+
+.navbar-default {
+    border-color: transparent;
+    background-color: ##01579B;
 }
 
 .navbar-default .navbar-brand {
