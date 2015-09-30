@@ -60,8 +60,8 @@ header .intro-text {
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
-    font-style: italic;
+    font-size: 20px;
+    font-style: normal;
     line-height: 22px;
 }
 
@@ -69,7 +69,7 @@ header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: lowercase;
     font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 900;
     line-height: 100%;
 }
@@ -83,8 +83,8 @@ header .intro-text .intro-heading {
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
         font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 32px;
-        font-style: italic;
+        font-size: 28px;
+        font-style: normal;
         line-height: 40px;
     }
 
