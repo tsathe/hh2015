@@ -59,7 +59,7 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 22px;
     font-style: italic;
     line-height: 22px;
@@ -82,7 +82,7 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 32px;
         font-style: italic;
         line-height: 40px;
@@ -151,4 +151,11 @@ header .intro-text .intro-heading {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
     background-image: none;
+}
+
+.navbar-default .navbar-brand {
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,cursive;
+    color: #fed136;
+    font-weight: 700;
+    text-align: center;
 }
