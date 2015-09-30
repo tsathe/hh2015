@@ -31,11 +31,11 @@ header .intro-text .intro-lead-in {
 
 header .intro-text .intro-heading {
     margin-bottom: 25px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 100%;
 }
 
 @media(min-width:768px) {
@@ -54,10 +54,10 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-heading {
         margin-bottom: 50px;
-        text-transform: uppercase;
+        text-transform: lowercase;
         font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 64px;
         font-weight: 700;
-        line-height: 75px;
+        line-height: 100%;
     }
 }
