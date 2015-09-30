@@ -6,9 +6,9 @@ body {
 h6 {
     margin-bottom: 25px;
     text-transform: lowercase;
-    font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 100%;
 }
 
@@ -68,9 +68,9 @@ header .intro-text .intro-lead-in {
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: lowercase;
-    font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 100%;
 }
 
@@ -91,9 +91,9 @@ header .intro-text .intro-heading {
     header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: lowercase;
-        font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 80px;
-        font-weight: 700;
+        font-weight: 900;
         line-height: 100%;
     }
 }
