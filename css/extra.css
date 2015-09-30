@@ -3,6 +3,41 @@ body {
     font-family: "Cardo", serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+h6 {
+    margin-bottom: 25px;
+    text-transform: lowercase;
+    font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Cardo","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
+
+@media(min-width:768px) {
+  h6 {
+      margin-bottom: 50px;
+      text-transform: lowercase;
+      font-family: "Arvo","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 100%;
+  }
+}
+
 header {
     text-align: left;
     color: #fff;
