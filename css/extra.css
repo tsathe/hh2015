@@ -223,7 +223,7 @@ section#donate .form-group {
 
 section#donate .form-group input,
 section#donate .form-group textarea {
-    padding: 20px;
+    padding: 15px;
 }
 
 section#donate .form-group input.form-control {
@@ -231,5 +231,5 @@ section#donate .form-group input.form-control {
 }
 
 section#donate .form-group textarea.form-control {
-    height: 315px;
+    height: 300px;
 }
