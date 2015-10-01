@@ -207,6 +207,14 @@ header .intro-text .intro-heading {
     text-align: center;
 }
 
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+    color: #fff;
+}
+
+
 .bg-darkest-blue {
     background-color: #263238;
 }
