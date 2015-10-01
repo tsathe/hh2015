@@ -212,3 +212,24 @@ header .intro-text .intro-heading {
 .bg-light-blue {
     background-color: #ECEFF1;
 }
+
+section#donate .section-heading {
+    color: #fff;
+}
+
+section#donate .form-group {
+    margin-bottom: 25px;
+}
+
+section#donate .form-group input,
+section#donate .form-group textarea {
+    padding: 20px;
+}
+
+section#donate .form-group input.form-control {
+    height: auto;
+}
+
+section#donate .form-group textarea.form-control {
+    height: 315px;
+}
