@@ -234,19 +234,9 @@ section#donate .form-group textarea.form-control {
     height: 282px;
 }
 
-
-#event .smashinglogo{
-  background-image: url(../img/event.png);
-  background-position: center center;
-  background-repeat: none;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+section#event {
+    background-color: #fff;
+    background-image: url(../img/event.png);
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.wrapper{background: url(../img/event.png) no-repeat   center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;}
