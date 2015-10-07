@@ -237,5 +237,10 @@ section#donate .form-group textarea.form-control {
 
 #event .smashinglogo{
   background-image: url(../img/event.png);
-  background-size:100% auto;
+  background-position: center center;
+  background-repeat: none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
