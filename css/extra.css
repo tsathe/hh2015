@@ -244,3 +244,9 @@ section#donate .form-group textarea.form-control {
   background-size: cover;
   -o-background-size: cover;
 }
+
+.wrapper{background: url(../img/event.png) no-repeat   center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;}
