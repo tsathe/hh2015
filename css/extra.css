@@ -235,7 +235,7 @@ section#donate .form-group textarea.form-control {
 }
 
 
-.smashinglogo{
+#event .smashinglogo{
   background-image: url(../img/event.png);
   background-position: center center;
   background-repeat: none;
