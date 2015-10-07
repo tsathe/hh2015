@@ -233,3 +233,9 @@ section#donate .form-group input.form-control {
 section#donate .form-group textarea.form-control {
     height: 282px;
 }
+
+
+#event .smashinglogo{
+  background-image: url(../img/event.png);
+  background-size:100% auto;
+}
