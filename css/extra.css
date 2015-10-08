@@ -240,10 +240,3 @@ section#event {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-section#donate {
-    background-color: #fff;
-    background-image: url(../img/stewart.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
