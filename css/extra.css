@@ -215,7 +215,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 
-.btn-xl2 {
+.btn-blue {
     padding: 15px 40px;
     border-color: #0071bc;
     border-radius: 3px;
@@ -228,42 +228,42 @@ fieldset[disabled] .btn-xl.active {
     margin-right: 5px;
 }
 
-.btn-xl2:hover,
-.btn-xl2:focus,
-.btn-xl2:active,
-.btn-xl2.active,
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
 .open .dropdown-toggle.btn-xl {
     border-color: #205493;
     color: #fff;
-    background-color: #205493;
+    background-color: #cd2026;
 }
 
-.btn-xl2:active,
-.btn-xl2.active,
+.btn-blue:active,
+.btn-blue.active,
 .open .dropdown-toggle.btn-xl {
     background-image: none;
 }
 
-.btn-xl2.disabled,
-.btn-xl2[disabled],
-fieldset[disabled] .btn-xl2,
-.btn-xl2.disabled:hover,
-.btn-xl2[disabled]:hover,
-fieldset[disabled] .btn-xl2:hover,
-.btn-xl2.disabled:focus,
-.btn-xl2[disabled]:focus,
-fieldset[disabled] .btn-xl2:focus,
-.btn-xl2.disabled:active,
-.btn-xl2[disabled]:active,
-fieldset[disabled] .btn-xl2:active,
-.btn-xl2.disabled.active,
-.btn-xl2[disabled].active,
-fieldset[disabled] .btn-xl2.active {
+.btn-blue.disabled,
+.btn-blue[disabled],
+fieldset[disabled] .btn-blue,
+.btn-blue.disabled:hover,
+.btn-blue[disabled]:hover,
+fieldset[disabled] .btn-blue:hover,
+.btn-blue.disabled:focus,
+.btn-blue[disabled]:focus,
+fieldset[disabled] .btn-blue:focus,
+.btn-blue.disabled:active,
+.btn-blue[disabled]:active,
+fieldset[disabled] .btn-blue:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue.active {
     border-color: #0071bc;
     background-color: #0071bc;
 }
 
-.btn-xl2 .badge {
+.btn-blue .badge {
     color: #0071bc;
     background-color: #fff;
 }
