@@ -275,6 +275,11 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
+.navbar-brand img
+{
+    max-height: 100%;
+}
+
 @media(min-width:768px) {
     .navbar-default {
         padding: 25px 0;
