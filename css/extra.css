@@ -162,7 +162,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-xl {
-    padding: 10px 40px;
+    padding: 15px 40px;
     border-color: #e31c3d;
     border-radius: 3px;
     text-transform: none;
@@ -171,6 +171,7 @@ fieldset[disabled] .btn-primary.active {
     font-weight: 700;
     color: #fff;
     background-color: #e31c3d;
+    margin-right: 5px;
 }
 
 .btn-xl:hover,
