@@ -214,7 +214,66 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fff;
 }
 
+.navbar-default {
+    border-color: transparent;
+    background-color: #222;
+}
 
+.navbar-default .navbar-brand {
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    color: #fed136;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+    color: #fec503;
+}
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,.02);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #fed136;
+    background-color: #fed136;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #fed136;
+}
+
+.navbar-default .nav li a {
+    text-transform: none;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #fed136;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #fed136;
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #fec503;
+}
 
 @media(min-width:768px) {
     .navbar-default {
@@ -231,14 +290,6 @@ fieldset[disabled] .btn-xl.active {
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
-      }
-
-      .navbar-brand > img {
-          max-height: 100%;
-          height: 100%;
-          -o-object-fit: contain;
-          object-fit: contain;
-        }
     }
 
     .navbar-default .navbar-nav>.active>a {
@@ -247,30 +298,14 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #112e51;
+        background-color: #222;
+    }
+
+    .navbar-default.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
     }
 }
 
-.navbar-default .navbar-brand {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:active,
-.navbar-default .navbar-brand.active {
-    color: #fff;
-}
-
-.navbar-brand > img {
-    max-height: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-  }
 
 
 .bg-darkest-blue {
