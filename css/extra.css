@@ -213,6 +213,10 @@ header .intro-text .intro-heading {
     background-color: #ECEFF1;
 }
 
+.bg-light-gray {
+    background-color: #efefef;
+}
+
 section#donate .section-heading {
     color: #000;
 }
