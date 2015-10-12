@@ -214,6 +214,67 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fff;
 }
 
+
+.btn-xl2 {
+    padding: 15px 40px;
+    border-color: #0071bc;
+    border-radius: 3px;
+    text-transform: none;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #0071bc;
+    margin-right: 5px;
+}
+
+.btn-xl2:hover,
+.btn-xl2:focus,
+.btn-xl2:active,
+.btn-xl2.active,
+.open .dropdown-toggle.btn-xl {
+    border-color: #205493;
+    color: #fff;
+    background-color: #205493;
+}
+
+.btn-xl2:active,
+.btn-xl2.active,
+.open .dropdown-toggle.btn-xl {
+    background-image: none;
+}
+
+.btn-xl2.disabled,
+.btn-xl2[disabled],
+fieldset[disabled] .btn-xl2,
+.btn-xl2.disabled:hover,
+.btn-xl2[disabled]:hover,
+fieldset[disabled] .btn-xl2:hover,
+.btn-xl2.disabled:focus,
+.btn-xl2[disabled]:focus,
+fieldset[disabled] .btn-xl2:focus,
+.btn-xl2.disabled:active,
+.btn-xl2[disabled]:active,
+fieldset[disabled] .btn-xl2:active,
+.btn-xl2.disabled.active,
+.btn-xl2[disabled].active,
+fieldset[disabled] .btn-xl2.active {
+    border-color: #0071bc;
+    background-color: #0071bc;
+}
+
+.btn-xl2 .badge {
+    color: #0071bc;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
 .navbar-default {
     border-color: transparent;
     background-color: #222;
