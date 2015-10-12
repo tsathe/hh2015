@@ -160,7 +160,7 @@ header .intro-text .intro-heading {
 
 .navbar-default {
     border-color: transparent;
-    background-color: #263238;
+    background-color: #112e51;
 }
 
 @media(min-width:768px) {
@@ -186,7 +186,7 @@ header .intro-text .intro-heading {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #263238;
+        background-color: #112e51;
     }
 }
 
@@ -206,7 +206,7 @@ header .intro-text .intro-heading {
 
 
 .bg-darkest-blue {
-    background-color: #263238;
+    background-color: #112e51;
 }
 
 .bg-light-blue {
