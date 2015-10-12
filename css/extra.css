@@ -113,12 +113,12 @@ header .intro-text .intro-heading {
 }
 
 .btn-primary {
-    border-color: #fed136;
-    text-transform: uppercase;
+    border-color: #e31c3d;
+    text-transform: none;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: #fed136;
+    background-color: #e31c3d;
 }
 
 .btn-primary:hover,
@@ -126,9 +126,9 @@ header .intro-text .intro-heading {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #f6bf01;
+    border-color: #981b1e;
     color: #fff;
-    background-color: #fec503;
+    background-color: #981b1e;
 }
 
 .btn-primary:active,
@@ -137,18 +137,50 @@ header .intro-text .intro-heading {
     background-image: none;
 }
 
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    border-color: #e31c3d;
+    background-color: #e31c3d;
+}
+
+.btn-primary .badge {
+    color: #e31c3d;
+    background-color: #fff;
+}
+
 .btn-xl {
     padding: 20px 40px;
-    border-color: #E91E63;
+    border-color: #e31c3d;
     border-radius: 3px;
-    text-transform: uppercase;
+    text-transform: none;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: #E91E63;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    background-color: #e31c3d;
+}
+
+.btn-xl:hover,
+.btn-xl:focus,
+.btn-xl:active,
+.btn-xl.active,
+.open .dropdown-toggle.btn-xl {
+    border-color: #981b1e;
+    color: #fff;
+    background-color: #981b1e;
 }
 
 .btn-xl:active,
@@ -157,11 +189,31 @@ header .intro-text .intro-heading {
     background-image: none;
 }
 
-
-.navbar-default {
-    border-color: transparent;
-    background-color: #112e51;
+.btn-xl.disabled,
+.btn-xl[disabled],
+fieldset[disabled] .btn-xl,
+.btn-xl.disabled:hover,
+.btn-xl[disabled]:hover,
+fieldset[disabled] .btn-xl:hover,
+.btn-xl.disabled:focus,
+.btn-xl[disabled]:focus,
+fieldset[disabled] .btn-xl:focus,
+.btn-xl.disabled:active,
+.btn-xl[disabled]:active,
+fieldset[disabled] .btn-xl:active,
+.btn-xl.disabled.active,
+.btn-xl[disabled].active,
+fieldset[disabled] .btn-xl.active {
+    border-color: #e31c3d;
+    background-color: #e31c3d;
 }
+
+.btn-xl .badge {
+    color: #e31c3d;
+    background-color: #fff;
+}
+
+
 
 @media(min-width:768px) {
     .navbar-default {
