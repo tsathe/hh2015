@@ -372,14 +372,6 @@ fieldset[disabled] .btn-blue.active {
     }
 }
 
-.navbar-brand {
-  float: left;
-  height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
-}
-
 @media (min-width: 768px) {
   .navbar-brand {
     float: left;
@@ -388,6 +380,9 @@ fieldset[disabled] .btn-blue.active {
     font-size: 18px;
     line-height: 20px;
   }
+
+  .navbar-collapse .navbar-brand{
+    height: 50px;
 }
 
 .bg-darkest-blue {
