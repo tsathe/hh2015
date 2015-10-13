@@ -339,6 +339,7 @@ fieldset[disabled] .btn-blue.active {
 .navbar-brand img
 {
     max-height: 100%;
+    padding: 0 0;
 }
 
 @media(min-width:768px) {
@@ -365,7 +366,7 @@ fieldset[disabled] .btn-blue.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #222;
+        background-color: #112e51;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
