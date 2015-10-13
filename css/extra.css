@@ -372,7 +372,16 @@ fieldset[disabled] .btn-blue.active {
     }
 }
 
+@media (min-width: 768px) {
+  .navbar-brand {
+    float: left;
+    height: 100px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+  }
 
+}
 
 .bg-darkest-blue {
     background-color: #112e51;
