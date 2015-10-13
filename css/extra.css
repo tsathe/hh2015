@@ -371,6 +371,7 @@ fieldset[disabled] .btn-blue.active {
     .navbar-default.navbar-shrink .navbar-brand {
         font-size: 1.5em;
         height: 50px;
+        padding: 0 0;
     }
 }
 
