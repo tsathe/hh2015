@@ -254,6 +254,7 @@ fieldset[disabled] .btn-xl.active {
     color: #fff;
     background-color: #0071bc;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .btn-blue:hover,
