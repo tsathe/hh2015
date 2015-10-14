@@ -114,7 +114,7 @@ header .intro-text .intro-heading {
 
 section h2.section-heading {
     font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 60px;
+    font-size: 48px;
     font-style: italic;
     font-weight: 900;
     line-height: 100%;
@@ -427,7 +427,7 @@ section#donate .form-group input.form-control {
 }
 
 section#donate .form-group textarea.form-control {
-    height: 105px;
+    height: 110px;
 }
 
 section#event {
