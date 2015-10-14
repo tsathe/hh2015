@@ -407,7 +407,7 @@ section#donate .form-group input.form-control {
 }
 
 section#donate .form-group textarea.form-control {
-    height: 282px;
+    height: 100px;
 }
 
 section#event {
