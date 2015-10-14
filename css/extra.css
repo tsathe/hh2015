@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
-    font-family: "Cardo", serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Playfair Display", serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
 }
 
 h1,
