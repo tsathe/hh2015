@@ -405,7 +405,6 @@ section#donate .form-group input,
 section#donate .form-group textarea,
 section#donate .form-group select {
     padding: 15px;
-    -webkit-appearance: none;
 }
 
 section#donate .form-group input.form-control {
