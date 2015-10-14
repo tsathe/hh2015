@@ -398,6 +398,7 @@ section#donate .form-group .form-control {
 }
 
 select {
+  -webkit-appearance: menulist-button;
   height: 50px;
   line-height: 50px;
 }
