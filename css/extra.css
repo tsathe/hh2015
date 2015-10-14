@@ -399,7 +399,7 @@ section#donate .form-group .form-control {
 
 section#donate .form-group input,
 section#donate .form-group textarea,
-section#donate .form-control {
+section#donate .form-control select {
     padding: 15px;
 }
 
