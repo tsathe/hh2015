@@ -403,7 +403,7 @@ section#donate .form-control select {
     padding: 15px;
 }
 
-section#donate .form-group input.form-control {
+section#donate .form-group input.form-control .form-control select {
     height: auto;
 }
 
