@@ -397,15 +397,8 @@ section#donate .form-group .form-control {
     margin-bottom: 25px;
 }
 
-select {
-  -webkit-appearance: menulist-button;
-  height: 50px;
-  line-height: 50px;
-}
-
 section#donate .form-group input,
-section#donate .form-group textarea,
-section#donate .form-group select {
+section#donate .form-group textarea {
     padding: 15px;
 }
 
