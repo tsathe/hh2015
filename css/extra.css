@@ -403,11 +403,6 @@ select {
   line-height: 50px;
 }
 
-section#donate .form-control select {
-    height: 50px;
-    line-height: 50px;
-}
-
 section#donate .form-group input,
 section#donate .form-group textarea,
 section#donate .form-group select {
