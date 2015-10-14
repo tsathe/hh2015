@@ -75,9 +75,6 @@ header {
     -o-background-size: cover;
 }
 
-header .thanks {
-    background-image: url(../img/thanks.png);
-}
 
 header .intro-text {
     padding-top: 100px;
