@@ -112,6 +112,16 @@ header .intro-text .intro-heading {
     }
 }
 
+section h2.section-heading {
+    font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 100%;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
 .btn-primary {
     border-color: #e31c3d;
     text-transform: none;
@@ -407,7 +417,7 @@ section#donate .form-group input.form-control {
 }
 
 section#donate .form-group textarea.form-control {
-    height: 100px;
+    height: 105px;
 }
 
 section#event {
