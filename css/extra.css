@@ -397,6 +397,11 @@ section#donate .form-group .form-control {
     margin-bottom: 25px;
 }
 
+select {
+  height: 50px;
+  line-height: 50px;
+}
+
 section#donate .form-control select {
     height: 50px;
     line-height: 50px;
