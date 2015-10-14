@@ -393,12 +393,13 @@ section#donate .section-heading {
     color: #000;
 }
 
-section#donate .form-group {
+section#donate .form-group .form-control {
     margin-bottom: 25px;
 }
 
 section#donate .form-group input,
-section#donate .form-group textarea {
+section#donate .form-group textarea,
+section#donate .form-control {
     padding: 15px;
 }
 
