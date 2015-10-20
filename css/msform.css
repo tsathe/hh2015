@@ -1,31 +1,7 @@
 /*custom font*/
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
 
-/*basic reset*/
-* {margin: 0; padding: 0;}
-
-html {
-	height: 100%;
-	/*Image only BG fallback*/
-	background: url('http://thecodeplayer.com/uploads/media/gs.png');
-	/*background = gradient + image pattern combo*/
-	background:
-		linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)),
-		url('http://thecodeplayer.com/uploads/media/gs.png');
-}
-
-body {
-	font-family: montserrat, arial, verdana;
-}
-/*form styles*/
-#msform {
-	width: 400px;
-	margin: 50px auto;
-	text-align: center;
-	position: relative;
-}
 #msform fieldset {
-	background: white;
+/*	background: white;
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -33,17 +9,18 @@ body {
 
 	box-sizing: border-box;
 	width: 80%;
-	margin: 0 10%;
+	margin: 0 10%; */
 
 	/*stacking fieldsets above each other*/
 	position: absolute;
 }
+
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
 	display: none;
 }
 /*inputs*/
-#msform input, #msform textarea {
+/*#msform input, #msform textarea {
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -55,7 +32,7 @@ body {
 	font-size: 13px;
 }
 /*buttons*/
-#msform .action-button {
+/* #msform .action-button {
 	width: 100px;
 	background: #27AE60;
 	font-weight: bold;
@@ -70,20 +47,20 @@ body {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 /*headings*/
-.fs-title {
+/* .fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
 }
-.fs-subtitle {
+/* .fs-subtitle {
 	font-weight: normal;
 	font-size: 13px;
 	color: #666;
 	margin-bottom: 20px;
 }
 /*progressbar*/
-#progressbar {
+ #progressbar {
 	margin-bottom: 30px;
 	overflow: hidden;
 	/*CSS counters to number the steps*/
@@ -130,4 +107,26 @@ body {
 #progressbar li.active:before,  #progressbar li.active:after{
 	background: #27AE60;
 	color: white;
+}
+
+section#msform .section-heading {
+    color: #000;
+}
+
+section#msform .fieldset .form-group .form-control {
+    margin-bottom: 25px;
+}
+
+section#msform .fieldset input,
+section#msform .form-group input,
+section#msform .form-group textarea {
+    padding: 15px;
+}
+
+section#msform .form-group input.form-control {
+    height: auto;
+}
+
+section#msform .form-group textarea.form-control {
+    height: 118px;
 }
