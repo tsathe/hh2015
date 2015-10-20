@@ -151,10 +151,10 @@ header .intro-text .intro-quote {
     }
 
     header .intro-text .intro-heading-ss {
-        margin-bottom: 50px;
+        margin-bottom: 24px;
         text-transform: lowercase;
         font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 150px;
+        font-size: 100px;
         font-weight: 900;
         line-height: 100%;
     }
