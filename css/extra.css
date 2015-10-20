@@ -207,6 +207,7 @@ fieldset[disabled] .btn-primary.active {
     font-weight: 700;
     color: #fff;
     background-color: #e31c3d;
+    margin-top: 5px;
     margin-right: 5px;
     margin-bottom: 5px;
 }
