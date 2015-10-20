@@ -106,7 +106,14 @@ header .intro-text .intro-heading {
     line-height: 100%;
 }
 
-header input {
+header .form-group .form-control .input-group .input-group-addon {
+  height: 25px;
+  background-color: none;
+  border-color: #fff;
+  color: #fff;
+}
+
+input .form-control {
   height: 25px;
   background-color: none;
   border-color: #fff;
