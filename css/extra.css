@@ -106,14 +106,6 @@ header .intro-text .intro-heading {
     line-height: 100%;
 }
 
-header .form-group .form-control .input-group .input-group-addon {
-  height: 25px;
-  background: transparent;
-  border-color: #fff;
-  color: #fff;
-}
-
-
 
 @media(min-width:768px) {
     header .intro-text {
@@ -206,7 +198,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-xl {
-    padding: 15px 40px;
+    padding: 5px 40px;
     border-color: #e31c3d;
     border-radius: 3px;
     text-transform: none;
