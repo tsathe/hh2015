@@ -113,13 +113,6 @@ header .form-group .form-control .input-group .input-group-addon {
   color: #fff;
 }
 
-input .form-control {
-  height: 25px;
-  background-color: none;
-  border-color: #fff;
-  color: #fff;
-}
-
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 150px;
