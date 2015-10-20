@@ -112,8 +112,6 @@
 
             <!-- multistep form -->
 <form id="msform" method="POST" action="https://www.paypal.com/cgi-bin/webscr">
-  <input type="hidden" name="business" value="Financedirector@dwighthall.org">
-  <input type="hidden" name="item_name" value="H&H Auction 2015-2016">
   <!-- progressbar -->
 	<ul id="progressbar">
 		<li class="active">Account Setup</li>
@@ -125,6 +123,8 @@
 		<h2 class="fs-title">Create your account</h2>
 		<h3 class="fs-subtitle">This is step 1</h3>
 
+    <input type="hidden" name="business" value="Financedirector@dwighthall.org">
+    <input type="hidden" name="item_name" value="H&H Auction 2015-2016">
     <label for="amount">Amount: </label><input type="text" name="amount" value="">
     <input type="radio" name="amount" value="1"><label for "amount">1</label>
     <input type="radio" name="amount" value="5"><label for "amount">5</label>
