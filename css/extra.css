@@ -109,7 +109,8 @@ header .intro-text .intro-heading {
 header input {
   height: 25px;
   background-color: none;
-  border-color: fff;
+  border-color: #fff;
+  color: #fff;
 }
 
 @media(min-width:768px) {
