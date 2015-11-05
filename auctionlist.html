@@ -43,12 +43,14 @@
 	  
 	  function formSubmit(itemID) {
 	  	
-	  	alert("A");
+	  	alert(itemID);
 		event.preventDefault();
 		var userEmail = document.getElementById("email").value;
 		var userBid = parseInt(document.getElementById("bid").value, 10);
+		alert("A1");
 	
 		var ItemObj = Parse.Object.extend("Item");
+		alert("A2");
 		var itemQuery = new Parse.Query(ItemObj);
 		alert("B");
 		itemQuery.get(itemID, {
