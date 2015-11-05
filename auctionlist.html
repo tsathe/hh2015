@@ -379,7 +379,7 @@
 				    success: function(item) {
 		  		    $("#quant").html( "Number Available: " + item.get("qty") );
 		  		    $("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    currWinners <- $("#currWin").html( "Current Winners: " + item.get("currentWinners") );
+		  		    $("#currWin").html( "Current Winners: " + item.get("currentWinners") );
 				},
 				error: function(item, error) {
 		  		    alert("Error: " + error.code + " " + error.message);
