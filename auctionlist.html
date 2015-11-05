@@ -370,10 +370,10 @@
 	  			var itemQuery = new Parse.Query(ItemObj);
 	  			itemQuery.get("F6dwBizQbs", {
 				    success: function(item) {
-				    	$("#item-id").attr("src",item.get("imageurl"));
+				    	$("#item-img").attr("src",item.get("imageurl"));
 				    	$("#item-name").html( item.get("name") );
-				    	$("#donor").html( item.get("donorname") );
-				    	$("desc").html( item.get("description") );
+				    	$("#donor").html( "Donated by " + item.get("donorname") );
+				    	$("#desc").html( item.get("description") );
 		  		    	$("#quant").html( "Number Available: " + item.get("qty") );
 		  		    	$("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
 		  		    	$("#currWin").html( "Current Winners: " + item.get("currentWinners") );
