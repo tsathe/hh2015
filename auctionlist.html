@@ -356,31 +356,33 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                            <h2 id="item-name">Project Heading</h2>
+                            <p id="donor" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img id="item-img" class="img-responsive img-centered" src="default.png" alt="">
+                            <p id="desc"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
                             
                             <p id="quant"></p>
 			    <p id="price"></p>
 			    <p id="currWin"></p>
 	
-
 			    <script type="text/javascript">
  	  			var ItemObj = Parse.Object.extend("Item");
 	  			var itemQuery = new Parse.Query(ItemObj);
 	  			itemQuery.get("F6dwBizQbs", {
 				    success: function(item) {
-		  		    $("#quant").html( "Number Available: " + item.get("qty") );
-		  		    $("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    $("#currWin").html( "Current Winners: " + item.get("currentWinners") );
-				},
-				error: function(item, error) {
-		  		    alert("Error: " + error.code + " " + error.message);
-		  		    response.error("Error: " + error.code + " " + error.message);
-				}
-	  		    });
+				    	$("#item-id").attr("src",item.get("imageurl"));
+				    	$("#item-name").html( item.get("name") );
+				    	$("#donor").html( item.get("donorname") );
+				    	$("desc").html( item.get("description") );
+		  		    	$("#quant").html( "Number Available: " + item.get("qty") );
+		  		    	$("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+		  		    	$("#currWin").html( "Current Winners: " + item.get("currentWinners") );
+				    },
+				    error: function(item, error) {
+		  		    	alert("Error: " + error.code + " " + error.message);
+		  		    	response.error("Error: " + error.code + " " + error.message);
+				    }
+	  		    	});
 			    </script>
                             
                             <div class="form_test">
