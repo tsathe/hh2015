@@ -165,6 +165,7 @@
 	$('#portfolioModal3').on('show.bs.modal', function (event) {
  		var button = $(event.relatedTarget); // Button that triggered the modal
   		var currID = button.data('testid'); // Extract info from data-* attributes
+  		alert(currID);
 
   		// Update the modal's content.
   		var ItemObj = Parse.Object.extend("Item");
@@ -185,7 +186,7 @@
 		  		response.error("Error: " + error.code + " " + error.message);
 			}
 	  	});
-	})
+	});
     </script>
 
 </head>
@@ -482,7 +483,7 @@
                         <div class="modal-body">
                             <h2 class="item-name">Project Heading</h2>
                             <p class="donor">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="item-img"src="default.png" alt="">
+                            <img class="item-img" src="default.png" alt="">
                             <p class="desc"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
                             
                             <p class="quant"></p>
