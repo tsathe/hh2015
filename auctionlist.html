@@ -162,6 +162,31 @@
 		return false;
 	}
 	
+                            	$('#portfolioModal3').on('show.bs.modal', function (event) {
+ 					var button = $(event.relatedTarget); // Button that triggered the modal
+  					var currID = button.data('testid'); // Extract info from data-* attributes
+	  				alert(currID);
+	
+	  				// Update the modal's content.
+	  				var ItemObj = Parse.Object.extend("Item");
+		  			var itemQuery = new Parse.Query(ItemObj);
+	  				var modal = $(this);
+		  			itemQuery.get(currID, {
+		  				success: function(item) {
+	  						modal.find('.item-name').html( item.get("name") );
+			  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
+			  				modal.find('.item-img').attr( "src", item.get("imageurl") );
+			  				modal.find('.desc').html( item.get("description") );
+			  				modal.find('.quant').html( "Number Available: " + item.get("qty") );
+			  				modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+			  				modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
+				  		},
+				  		error: function(item, error) {
+					  		alert("Error: " + error.code + " " + error.message);
+					  		response.error("Error: " + error.code + " " + error.message);
+						}
+				  	});
+				});
 	
     </script>
 
@@ -253,7 +278,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="javascript:;" class="portfolio-link" data-toggle="modal" data-target="#portfolioModal3" data-testid="d2IB1bLKKG">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal"data-testid="d2IB1bLKKG">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -264,6 +289,7 @@
                     <div class="portfolio-caption">
                         <h4>Treehouse</h4>
                         <p class="text-muted">Website Design</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#portfolioModal3" data-testid="d2IB1bLKKG">Bid on this item!</button>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -467,33 +493,7 @@
 			    <p class="currWin"></p>
                             
                             <!-- Insert form here -->
-                            <script>
-                            	$('#portfolioModal3').on('show.bs.modal', function (event) {
- 					var button = $(event.relatedTarget); // Button that triggered the modal
-  					var currID = button.data('testid'); // Extract info from data-* attributes
-	  				alert(currID);
-	
-	  				// Update the modal's content.
-	  				var ItemObj = Parse.Object.extend("Item");
-		  			var itemQuery = new Parse.Query(ItemObj);
-	  				var modal = $(this);
-		  			itemQuery.get(currID, {
-		  				success: function(item) {
-	  						modal.find('.item-name').html( item.get("name") );
-			  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
-			  				modal.find('.item-img').attr( "src", item.get("imageurl") );
-			  				modal.find('.desc').html( item.get("description") );
-			  				modal.find('.quant').html( "Number Available: " + item.get("qty") );
-			  				modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-			  				modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
-				  		},
-				  		error: function(item, error) {
-					  		alert("Error: " + error.code + " " + error.message);
-					  		response.error("Error: " + error.code + " " + error.message);
-						}
-				  	});
-				});
-                            </script>
+                           
                             
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
