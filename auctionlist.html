@@ -162,6 +162,8 @@
 		return false;
 	}
 	
+	$(document).ready( function() {
+		alert("!");Testing a single customizable modal.
                             	$('#portfolioModal3').on('show.bs.modal', function (event) {
  					var button = $(event.relatedTarget); // Button that triggered the modal
   					var currID = button.data('testid'); // Extract info from data-* attributes
