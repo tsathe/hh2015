@@ -184,7 +184,7 @@
 			  				modal.find('.quant').html( "Number Available: " + item.get("qty") );
 			  				modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
 			  				modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
-			  				modal.find('.form_test').html( "<form method='post' onsubmit='formSubmit(" + currID + ");'>" + afterHTML );
+			  				modal.find('.form_test').html( "<form method='post' onsubmit='formSubmit(&quot;" + currID + "&quot;);'>" + afterHTML );
 				  		},
 				  		error: function(item, error) {
 					  		alert("Error: " + error.code + " " + error.message);
@@ -257,7 +257,7 @@
             
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" data=testid="4Von0Iso2g">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" data=testid="4Von0Iso2g">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
