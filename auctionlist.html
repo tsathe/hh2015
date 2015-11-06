@@ -43,7 +43,7 @@
     
     <!-- Connect to Parse -->
     <script type="text/javascript">
-	  Parse.initialize("chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr", "B6EAGCyj0t2clP0xFyID1pMnnM40RBgrpS4m4izV");
+	  
 	  
 	  function formSubmit(itemID) {
 	  	
@@ -163,7 +163,8 @@
 	}
 	
 	$(document).ready( function() {
-		alert("!");Testing a single customizable modal.
+		alert("!");
+		Parse.initialize("chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr", "B6EAGCyj0t2clP0xFyID1pMnnM40RBgrpS4m4izV");
                             	$('#portfolioModal3').on('show.bs.modal', function (event) {
  					var button = $(event.relatedTarget); // Button that triggered the modal
   					var currID = button.data('testid'); // Extract info from data-* attributes
