@@ -337,13 +337,13 @@
 	  			var itemQuery = new Parse.Query(ItemObj);
 	  			itemQuery.get("4Von0Iso2g", {
 				    success: function(item) {
-				    	$("#item-img").attr("src",item.get("imageurl"));
-				    	$("#item-name").html( item.get("name") );
-				    	$("#donor").html( "Donated by " + item.get("donorname") );
-				    	$("#desc").html( item.get("description") );
-		  		    	$("#quant").html( "Number Available: " + item.get("qty") );
-		  		    	$("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#currWin").html( "Current Winners: " + item.get("currentWinners") );
+				    	$("#portfolioModal1").find("item-img").attr("src",item.get("imageurl"));
+				    	$("#portfolioModal1").find("item-name").html( item.get("name") );
+				    	$("#portfolioModal1").find("donor").html( "Donated by " + item.get("donorname") );
+				    	$("#portfolioModal1").find("desc").html( item.get("description") );
+		  		    	$("#portfolioModal1").find("quant").html( "Number Available: " + item.get("qty") );
+		  		    	$("#portfolioModal1").find("price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+		  		    	$("#portfolioModal1").find("currWin").html( "Current Winners: " + item.get("currentWinners") );
 				    },
 				    error: function(item, error) {
 		  		    	alert("Error: " + error.code + " " + error.message);
@@ -403,13 +403,13 @@
 	  			var itemQuery = new Parse.Query(ItemObj);
 	  			itemQuery.get("F6dwBizQbs", {
 				    success: function(item) {
-				    	$("#item-img").attr("src",item.get("imageurl"));
-				    	$("#item-name").html( item.get("name") );
-				    	$("#donor").html( "Donated by " + item.get("donorname") );
-				    	$("#desc").html( item.get("description") );
-		  		    	$("#quant").html( "Number Available: " + item.get("qty") );
-		  		    	$("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#currWin").html( "Current Winners: " + item.get("currentWinners") );
+				    	$("#portfolioModal2").find("item-img").attr("src",item.get("imageurl"));
+				    	$("#portfolioModal2").find("item-name").html( item.get("name") );
+				    	$("#portfolioModal2").find("donor").html( "Donated by " + item.get("donorname") );
+				    	$("#portfolioModal2").find("desc").html( item.get("description") );
+		  		    	$("#portfolioModal2").find("quant").html( "Number Available: " + item.get("qty") );
+		  		    	$("#portfolioModal2").find("price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+		  		    	$("#portfolioModal2").find("currWin").html( "Current Winners: " + item.get("currentWinners") );
 				    },
 				    error: function(item, error) {
 		  		    	alert("Error: " + error.code + " " + error.message);
