@@ -323,27 +323,27 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2 id="item-name">Project Heading</h2>
-                            <p id="donor" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img id="item-img" class="img-responsive img-centered" src="default.png" alt="">
-                            <p id="desc"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                            <h2 id="item-name-1">Project Heading</h2>
+                            <p id="donor-1" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img id="item-img-1" class="img-responsive img-centered" src="default.png" alt="">
+                            <p id="desc-1"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
                             
-                            <p id="quant"></p>
-			    <p id="price"></p>
-			    <p id="currWin"></p>
+                            <p id="quant-1"></p>
+			    <p id="price-1"></p>
+			    <p id="currWin-1"></p>
 	
 			    <script type="text/javascript">
  	  			var ItemObj = Parse.Object.extend("Item");
 	  			var itemQuery = new Parse.Query(ItemObj);
 	  			itemQuery.get("4Von0Iso2g", {
 				    success: function(item) {
-				    	$("#portfolioModal1").find("item-img").attr("src",item.get("imageurl"));
-				    	$("#portfolioModal1").find("item-name").html( item.get("name") );
-				    	$("#portfolioModal1").find("donor").html( "Donated by " + item.get("donorname") );
-				    	$("#portfolioModal1").find("desc").html( item.get("description") );
-		  		    	$("#portfolioModal1").find("quant").html( "Number Available: " + item.get("qty") );
-		  		    	$("#portfolioModal1").find("price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#portfolioModal1").find("currWin").html( "Current Winners: " + item.get("currentWinners") );
+				    	$("#item-img-1").attr("src",item.get("imageurl"));
+				    	$("#item-name-1").html( item.get("name") );
+				    	$("#donor-1").html( "Donated by " + item.get("donorname") );
+				    	$("#desc-1").html( item.get("description") );
+		  		    	$("#quant-1").html( "Number Available: " + item.get("qty") );
+		  		    	$("#price-1").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+		  		    	$("#currWin-1").html( "Current Winners: " + item.get("currentWinners") );
 				    },
 				    error: function(item, error) {
 		  		    	alert("Error: " + error.code + " " + error.message);
@@ -389,27 +389,27 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2 id="item-name">Project Heading</h2>
-                            <p id="donor" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img id="item-img" class="img-responsive img-centered" src="default.png" alt="">
-                            <p id="desc"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                            <h2 id="item-name-2">Project Heading</h2>
+                            <p id="donor-2" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img id="item-img-2" class="img-responsive img-centered" src="default.png" alt="">
+                            <p id="desc-2"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
                             
-                            <p id="quant"></p>
-			    <p id="price"></p>
-			    <p id="currWin"></p>
+                            <p id="quant-2"></p>
+			    <p id="price-2"></p>
+			    <p id="currWin-2"></p>
 	
 			    <script type="text/javascript">
  	  			var ItemObj = Parse.Object.extend("Item");
 	  			var itemQuery = new Parse.Query(ItemObj);
 	  			itemQuery.get("F6dwBizQbs", {
 				    success: function(item) {
-				    	$("#portfolioModal2").find("item-img").attr("src",item.get("imageurl"));
-				    	$("#portfolioModal2").find("item-name").html( item.get("name") );
-				    	$("#portfolioModal2").find("donor").html( "Donated by " + item.get("donorname") );
-				    	$("#portfolioModal2").find("desc").html( item.get("description") );
-		  		    	$("#portfolioModal2").find("quant").html( "Number Available: " + item.get("qty") );
-		  		    	$("#portfolioModal2").find("price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#portfolioModal2").find("currWin").html( "Current Winners: " + item.get("currentWinners") );
+				    	$("#item-img-2").attr("src",item.get("imageurl"));
+				    	$("#item-name-2").html( item.get("name") );
+				    	$("#donor-2").html( "Donated by " + item.get("donorname") );
+				    	$("#desc-2").html( item.get("description") );
+		  		    	$("#quant-2").html( "Number Available: " + item.get("qty") );
+		  		    	$("#price-2").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+		  		    	$("#currWin-2").html( "Current Winners: " + item.get("currentWinners") );
 				    },
 				    error: function(item, error) {
 		  		    	alert("Error: " + error.code + " " + error.message);
