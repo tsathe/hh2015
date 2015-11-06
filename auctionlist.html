@@ -488,26 +488,6 @@
                             <p class="quant"></p>
 			    <p class="price"></p>
 			    <p class="currWin"></p>
-	
-			    <script type="text/javascript">
- 	  			var ItemObj = Parse.Object.extend("Item");
-	  			var itemQuery = new Parse.Query(ItemObj);
-	  			itemQuery.get("F6dwBizQbs", {
-				    success: function(item) {
-				    	$("#item-img").attr("src",item.get("imageurl"));
-				    	$("#item-name").html( item.get("name") );
-				    	$("#donor").html( "Donated by " + item.get("donorname") );
-				    	$("#desc").html( item.get("description") );
-		  		    	$("#quant").html( "Number Available: " + item.get("qty") );
-		  		    	$("#price").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#currWin").html( "Current Winners: " + item.get("currentWinners") );
-				    },
-				    error: function(item, error) {
-		  		    	alert("Error: " + error.code + " " + error.message);
-		  		    	response.error("Error: " + error.code + " " + error.message);
-				    }
-	  		    	});
-			    </script>
                             
                             <!-- Insert form here -->
                             
