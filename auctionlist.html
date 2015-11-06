@@ -164,17 +164,27 @@
 	
 	$('#portfolioModal3').on('show.bs.modal', function (event) {
  		var button = $(event.relatedTarget); // Button that triggered the modal
-  		var recipient = button.data('testid'); // Extract info from data-* attributes
+  		var currID = button.data('testid'); // Extract info from data-* attributes
 
   		// Update the modal's content.
-  		var modal = $(this);
-  		modal.find('.item-name').html( item.get("name") );
-  		modal.find('.donor').html( "Donated by " + item.get("donorname") );
-  		modal.find('.item-img').attr( "src", item.get("imageurl") );
-  		modal.find('.desc').html( item.get("description") );
-  		modal.find('.quant').html( "Number Available: " + item.get("qty") );
-  		modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-  		modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
+  		var ItemObj = Parse.Object.extend("Item");
+	  	var itemQuery = new Parse.Query(ItemObj);
+	  	itemQuery.get(currID, {
+	  		success: function(item) {
+  				var modal = $(this);
+  				modal.find('.item-name').html( item.get("name") );
+  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
+  				modal.find('.item-img').attr( "src", item.get("imageurl") );
+  				modal.find('.desc').html( item.get("description") );
+  				modal.find('.quant').html( "Number Available: " + item.get("qty") );
+  				modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+  				modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
+	  		},
+	  		error: function(item, error) {
+		  		alert("Error: " + error.code + " " + error.message);
+		  		response.error("Error: " + error.code + " " + error.message);
+			}
+	  	});
 	})
     </script>
 
