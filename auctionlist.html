@@ -48,7 +48,6 @@
 	  function formSubmit(itemID) {
 	  	
 		event.preventDefault();
-		alert("Submitting");
 		var userEmail = document.getElementById("email").value;
 		var userBid = parseInt(document.getElementById("bid").value, 10);
 	
@@ -77,10 +76,10 @@
 	
 				// Make sure the bid increments current max bid by at least the minimum increment
 				var allWinningBids = item.get("currentPrice");
-	            var minIncrement = item.get("priceIncrement");
-	            if (!minIncrement) {
-	                minIncrement = 1;
-	            }
+	            		var minIncrement = item.get("priceIncrement");
+	            		if (!minIncrement) {
+	        			minIncrement = 1;
+	            		}
 				if (userBid < (allWinningBids[allWinningBids.length-1] + minIncrement) ) {
 					alert("You need to raise the current price by at least $" + minIncrement);
 					return;
@@ -144,7 +143,6 @@
 						response.success();
 					},
 					error: function(item, error) {
-						alert("Error: " + error.code + " " + error.message);
 						console.error(error);
 						response.error("Something went wrong - try again?");
 					}
@@ -154,7 +152,6 @@
 				location.reload(forceGet = true);
 			},
 			error: function(error) {
-				alert("Error: " + error.code + " " + error.message);
 			    console.error("Error: " + error.code + " " + error.message);
 			    response.error("Error: " + error.code + " " + error.message);
 			}
@@ -165,33 +162,32 @@
 	
 	$(document).ready( function() {
 		Parse.initialize("chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr", "B6EAGCyj0t2clP0xFyID1pMnnM40RBgrpS4m4izV");
-		var afterHTML = "<div><label for='email'>E-mail:</label><input type='text' id='email' name='user_email' /></div> <div><label for='bid'>Your bid:</label><input type='number' id='bid' name='user_bid' min=1 max=9999 /></div> <div><input type='submit' value='Place Bid!' /></div> </form>";
-                            	$('#portfolioModal3').on('show.bs.modal', function (event) {
- 					var button = $(event.relatedTarget); // Button that triggered the modal
-  					var currID = button.data('testid'); // Extract info from data-* attributes
-	  				alert(currID);
-	
-	  				// Update the modal's content.
-	  				var ItemObj = Parse.Object.extend("Item");
-		  			var itemQuery = new Parse.Query(ItemObj);
-	  				var modal = $(this);
-		  			itemQuery.get(currID, {
-		  				success: function(item) {
-	  						modal.find('.item-name').html( item.get("name") );
-			  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
-			  				modal.find('.item-img').attr( "src", item.get("imageurl") );
-			  				modal.find('.desc').html( item.get("description") );
-			  				modal.find('.quant').html( "Number Available: " + item.get("qty") );
-			  				modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-			  				modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
-			  				modal.find('.form_test').html( "<form method='post' onsubmit='formSubmit(&quot;" + currID + "&quot;);'>" + afterHTML );
-				  		},
-				  		error: function(item, error) {
-					  		alert("Error: " + error.code + " " + error.message);
-					  		response.error("Error: " + error.code + " " + error.message);
-						}
-				  	});
-				});
+		var afterHTML = "<div class='bid-email'><label for='email'>E-mail:</label><input type='text' id='email' name='user_email' /></div> <div class='bid-amt'><label for='bid'>Your bid:</label><input type='number' id='bid' name='user_bid' min=1 max=9999 /></div> <div class='bid-submit'><input type='submit' value='Place Bid!' /></div> </form>";
+            	$('#portfolioModal').on('show.bs.modal', function (event) {
+ 			var button = $(event.relatedTarget); // Button that triggered the modal
+  			var currID = button.data('parseid'); // Extract info from data-* attributes
+
+  			// Update the modal's content.
+  			var ItemObj = Parse.Object.extend("Item");
+  			var itemQuery = new Parse.Query(ItemObj);
+  			var modal = $(this);
+  			itemQuery.get(currID, {
+  				success: function(item) {
+  					modal.find('.item-name').html( item.get("name") );
+	  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
+	  				modal.find('.item-img').attr( "src", item.get("imageurl") );
+	  				modal.find('.desc').html( item.get("description") );
+	  				modal.find('.quant').html( "Number Available: " + item.get("qty") );
+	  				modal.find('.price').html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
+	  				modal.find('.currWin').html( "Current Winners: " + item.get("currentWinners") );
+	  				modal.find('.bid-form').html( "<form method='post' onsubmit='formSubmit(&quot;" + currID + "&quot;);'>" + afterHTML );
+		  		},
+		  		error: function(item, error) {
+			  		alert("Error: " + error.code + " " + error.message);
+			  		response.error("Error: " + error.code + " " + error.message);
+				}
+		  	});
+		});
 	});
 	
     </script>
@@ -257,7 +253,7 @@
             
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal" data=testid="4Von0Iso2g">
+                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal" data-parseid="4Von0Iso2g">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -272,7 +268,7 @@
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" data-testid="F6dwBizQbs">
+                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal" data-parseid="F6dwBizQbs">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -287,7 +283,7 @@
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal" data-testid="d2IB1bLKKG">
+                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal" data-parseid="d2IB1bLKKG">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -346,140 +342,9 @@
         </div>
     </section>
 
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2 id="item-name-1">Project Heading</h2>
-                            <p id="donor-1" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img id="item-img-1" class="img-responsive img-centered" src="default.png" alt="">
-                            <p id="desc-1"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            
-                            <p id="quant-1"></p>
-			    <p id="price-1"></p>
-			    <p id="currWin-1"></p>
-	
-			    <script type="text/javascript">
- 	  			var ItemObj = Parse.Object.extend("Item");
-	  			var itemQuery = new Parse.Query(ItemObj);
-	  			itemQuery.get("4Von0Iso2g", {
-				    success: function(item) {
-				    	$("#item-img-1").attr("src",item.get("imageurl"));
-				    	$("#item-name-1").html( item.get("name") );
-				    	$("#donor-1").html( "Donated by " + item.get("donorname") );
-				    	$("#desc-1").html( item.get("description") );
-		  		    	$("#quant-1").html( "Number Available: " + item.get("qty") );
-		  		    	$("#price-1").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#currWin-1").html( "Current Winners: " + item.get("currentWinners") );
-				    },
-				    error: function(item, error) {
-		  		    	alert("Error: " + error.code + " " + error.message);
-		  		    	response.error("Error: " + error.code + " " + error.message);
-				    }
-	  		    	});
-			    </script>
-                            
-                            <div class="form_test">
-	                        <form method="post" onsubmit="formSubmit('F6dwBizQbs');">
-		                        <div>
-		                            <label for="email">E-mail:</label>
-		                            <input type="text" id="email1" name="user_email" />
-		                        </div>
-		                        <div>
-		                            <label for="bid">Your bid:</label>
-		                            <input type="number" id="bid1" name="user_bid" min=1 max=9999 />
-		                        </div>
-		                        <div>
-		                            <input type="submit" value="Place Bid!" />
-		                        </div>
-	                        </form>
-	                    </div>
-                            
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2 id="item-name-2">Project Heading</h2>
-                            <p id="donor-2" class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img id="item-img-2" class="img-responsive img-centered" src="default.png" alt="">
-                            <p id="desc-2"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            
-                            <p id="quant-2"></p>
-			    <p id="price-2"></p>
-			    <p id="currWin-2"></p>
-	
-			    <script type="text/javascript">
- 	  			var ItemObj = Parse.Object.extend("Item");
-	  			var itemQuery = new Parse.Query(ItemObj);
-	  			itemQuery.get("F6dwBizQbs", {
-				    success: function(item) {
-				    	$("#item-img-2").attr("src",item.get("imageurl"));
-				    	$("#item-name-2").html( item.get("name") );
-				    	$("#donor-2").html( "Donated by " + item.get("donorname") );
-				    	$("#desc-2").html( item.get("description") );
-		  		    	$("#quant-2").html( "Number Available: " + item.get("qty") );
-		  		    	$("#price-2").html( "Current Price: $" + Math.max.apply(Math, item.get("currentPrice")) );
-		  		    	$("#currWin-2").html( "Current Winners: " + item.get("currentWinners") );
-				    },
-				    error: function(item, error) {
-		  		    	alert("Error: " + error.code + " " + error.message);
-		  		    	response.error("Error: " + error.code + " " + error.message);
-				    }
-	  		    	});
-			    </script>
-                            
-                            <div class="form_test">
-	                        <form method="post" onsubmit="formSubmit('F6dwBizQbs');">
-		                        <div>
-		                            <label for="email">E-mail:</label>
-		                            <input type="text" id="email2" name="user_email" />
-		                        </div>
-		                        <div>
-		                            <label for="bid">Your bid:</label>
-		                            <input type="number" id="bid2" name="user_bid" min=1 max=9999 />
-		                        </div>
-		                        <div>
-		                            <input type="submit" value="Place Bid!" />
-		                        </div>
-	                        </form>
-	                    </div>
-                            
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    
+    <!-- Portfolio Modal Template -->
+    <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -501,90 +366,9 @@
 			    <p class="currWin"></p>
                             
                             <!-- Insert form here -->
-			    <div class="form_test">
+			    <div class="bid-form">
 	                    </div>
                             
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
