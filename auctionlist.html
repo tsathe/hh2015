@@ -188,6 +188,21 @@
 				}
 		  	});
 		});
+		
+            	var thisItemID = "4Von0Iso2g";
+            	var ItemObj = Parse.Object.extend("Item");
+  		var itemQuery = new Parse.Query(ItemObj);
+  		itemQuery.get(thisItemID, {
+  			success: function(item) {
+  				$("#item-img-1").attr( "src", item.get("imageurl") );
+  				$("#item-name-1").html( item.get("name") );
+  				$("#item-donor-1").html( item.get("donorname") );
+  				$("#modal-link-1").attr( "data-parseid", thisItemID );
+	  		},
+	  		error: function(item, error) {
+		  		response.error("Error: " + error.code + " " + error.message);
+			}
+	  	});
 	});
 	
     </script>
