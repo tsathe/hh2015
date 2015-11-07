@@ -253,18 +253,34 @@
             
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal" data-parseid="4Von0Iso2g">
+                    <a href="#portfolioModal" id="modal-link-1" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                        <img id="item-img-1" src="img/portfolio/roundicons.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Espresso Brownies</h4>
-                        <p class="text-muted">Alison Bonds</p>
+                        <h4 id="item-name-1">Espresso Brownies</h4>
+                        <p id="item-donor-1" class="text-muted">Alison Bonds</p>
                     </div>
+                    <script type="text/javascript">
+                    	var thisItemID = "4Von0Iso2g";
+                    	var ItemObj = Parse.Object.extend("Item");
+  			var itemQuery = new Parse.Query(ItemObj);
+  			itemQuery.get(thisItemID, {
+  				success: function(item) {
+  					$("#item-img-1").attr( "src", item.get("imageurl") );
+  					$("#item-name-1").html( item.get("name") );
+	  				$("#item-donor-1").html( item.get("donorname") );
+	  				$("#modal-link-1").attr( "data-parseid", thisItemID );
+		  		},
+		  		error: function(item, error) {
+			  		response.error("Error: " + error.code + " " + error.message);
+				}
+		  	});
+                    </script>
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
