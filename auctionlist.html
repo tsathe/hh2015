@@ -177,6 +177,21 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
+  	
+  	var thisItemID = "F6dwBizQbs";
+    	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
+  	itemQuery.get(thisItemID, {
+  		success: function(item) {
+  			$("#item-img-2").attr( "src", item.get("imageurl") );
+  			$("#item-name-2").html( item.get("name") );
+  			$("#item-donor-2").html( item.get("donorname") );
+  			$("#modal-link-2").attr( "data-parseid", thisItemID );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
 	
 	$.holdReady(false);
 	
@@ -288,18 +303,21 @@
                     </div>
                 </div>
                 
+                <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal" data-parseid="F6dwBizQbs">
+                    <a href="#portfolioModal" id="modal-link-2" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
+                            <img id="item-img-2" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+                        </div>
                     </a>
                     <div class="portfolio-caption">
-                        <h4>YSM Red Bow Tie</h4>
-                        <p class="text-muted">James Reed</p>
+                        <h4 id="item-name-2">Espresso Brownies</h4>
+                        <p id="item-donor-2" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
                 
