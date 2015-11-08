@@ -168,7 +168,8 @@
   	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
-  			$("#item-img-1").attr( "src", item.get("imageurl") );
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-1").attr( "src", item.get("imageurl") );
   			$("#item-name-1").html( item.get("name") );
   			$("#item-donor-1").html( item.get("donorname") );
   			$("#modal-link-1").attr( "data-parseid", thisItemID );
@@ -183,7 +184,8 @@
   	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
-  			$("#item-img-2").attr( "src", item.get("imageurl") );
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-2").attr( "src", item.get("imageurl") );
   			$("#item-name-2").html( item.get("name") );
   			$("#item-donor-2").html( item.get("donorname") );
   			$("#modal-link-2").attr( "data-parseid", thisItemID );
@@ -198,7 +200,8 @@
   	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
-  			$("#item-img-3").attr( "src", item.get("imageurl") );
+  			if (item.get("imageurl").length > 0)
+	  			$("#item-img-3").attr( "src", item.get("imageurl") );
   			$("#item-name-3").html( item.get("name") );
   			$("#item-donor-3").html( item.get("donorname") );
   			$("#modal-link-3").attr( "data-parseid", thisItemID );
@@ -213,7 +216,8 @@
   	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
-  			$("#item-img-4").attr( "src", item.get("imageurl") );
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-4").attr( "src", item.get("imageurl") );
   			$("#item-name-4").html( item.get("name") );
   			$("#item-donor-4").html( item.get("donorname") );
   			$("#modal-link-4").attr( "data-parseid", thisItemID );
@@ -228,7 +232,8 @@
   	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
-  			$("#item-img-5").attr( "src", item.get("imageurl") );
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-5").attr( "src", item.get("imageurl") );
   			$("#item-name-5").html( item.get("name") );
   			$("#item-donor-5").html( item.get("donorname") );
   			$("#modal-link-5").attr( "data-parseid", thisItemID );
@@ -243,7 +248,8 @@
   	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
-  			$("#item-img-6").attr( "src", item.get("imageurl") );
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-6").attr( "src", item.get("imageurl") );
   			$("#item-name-6").html( item.get("name") );
   			$("#item-donor-6").html( item.get("donorname") );
   			$("#modal-link-6").attr( "data-parseid", thisItemID );
