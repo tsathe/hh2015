@@ -495,10 +495,14 @@ section#event {
     background-repeat: no-repeat;
 }
 
-.bid-email input {
+.bid-email .bid-amt {
+    margin-bottom: 25px;
+}
+
+.bid-email .bid-amt input {
     padding: 15px;
 }
 
-.bid-amt input {
-    padding: 15px;
+.bid-email .bid-amt input.form-control {
+    height: auto;
 }
