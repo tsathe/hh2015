@@ -179,14 +179,64 @@
   	});
   	
   	var thisItemID = "F6dwBizQbs";
-    	var ItemObj = Parse.Object.extend("Item");
-  	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
   			$("#item-img-2").attr( "src", item.get("imageurl") );
   			$("#item-name-2").html( item.get("name") );
   			$("#item-donor-2").html( item.get("donorname") );
   			$("#modal-link-2").attr( "data-parseid", thisItemID );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
+  	
+  	var thisItemID = "8BXVWkeiF0";
+  	itemQuery.get(thisItemID, {
+  		success: function(item) {
+  			$("#item-img-3").attr( "src", item.get("imageurl") );
+  			$("#item-name-3").html( item.get("name") );
+  			$("#item-donor-3").html( item.get("donorname") );
+  			$("#modal-link-3").attr( "data-parseid", thisItemID );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
+  	
+  	var thisItemID = "DTfrlv3wQU";
+  	itemQuery.get(thisItemID, {
+  		success: function(item) {
+  			$("#item-img-4").attr( "src", item.get("imageurl") );
+  			$("#item-name-4").html( item.get("name") );
+  			$("#item-donor-4").html( item.get("donorname") );
+  			$("#modal-link-4").attr( "data-parseid", thisItemID );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
+  	
+  	var thisItemID = "37NAUDjTzF";
+  	itemQuery.get(thisItemID, {
+  		success: function(item) {
+  			$("#item-img-5").attr( "src", item.get("imageurl") );
+  			$("#item-name-5").html( item.get("name") );
+  			$("#item-donor-5").html( item.get("donorname") );
+  			$("#modal-link-5").attr( "data-parseid", thisItemID );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
+  	
+  	var thisItemID = "jV6BlhQTbv";
+  	itemQuery.get(thisItemID, {
+  		success: function(item) {
+  			$("#item-img-6").attr( "src", item.get("imageurl") );
+  			$("#item-name-6").html( item.get("name") );
+  			$("#item-donor-6").html( item.get("donorname") );
+  			$("#modal-link-6").attr( "data-parseid", thisItemID );
   		},
   		error: function(item, error) {
 	  		response.error("Error: " + error.code + " " + error.message);
@@ -303,7 +353,6 @@
                     </div>
                 </div>
                 
-                <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-2" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -335,8 +384,9 @@
                         <p class="text-muted">Website Design</p>
                     </div>
                 </div>
+                
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -349,8 +399,9 @@
                         <p class="text-muted">Website Design</p>
                     </div>
                 </div>
+                
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -363,8 +414,9 @@
                         <p class="text-muted">Website Design</p>
                     </div>
                 </div>
+                
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
@@ -377,6 +429,7 @@
                         <p class="text-muted">Website Design</p>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
