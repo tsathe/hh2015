@@ -36,45 +36,45 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <!-- Load Parse framework -->
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    
+
     <!-- Connect to Parse -->
     <script type="text/javascript">
-	  
+
 	  $.holdReady(true);
-	  
+
 	  function formSubmit(itemID) {
-	  	
+
 		event.preventDefault();
 		var userEmail = document.getElementById("email").value;
 		var userBid = parseInt(document.getElementById("bid").value, 10);
-	
+
 		var ItemObj = Parse.Object.extend("Item");
 		var itemQuery = new Parse.Query(ItemObj);
 		itemQuery.get(itemID, {
 			success: function(item) {
-				
+
 				if (!item)
 				 return;
-	
+
 				var date = Date.now();
-	
+
 				// Make sure bidding on this item hasn't closed.
 				if (date > item.get("closetime")) {
 					alert("Bidding for this item has ended.");
 					return;
 				}
-	
+
 				// Make sure the bidder isn't already winning the item
 				var allWinners = item.get("currentWinners");
 				if (allWinners.indexOf(userEmail) > -1) {
 					alert("You are already one of the winners for this item!");
 					return;
 				}
-	
+
 				// Make sure the bid increments current max bid by at least the minimum increment
 				var allWinningBids = item.get("currentPrice");
 	            		var minIncrement = item.get("priceIncrement");
@@ -85,42 +85,42 @@
 					alert("You need to raise the current price by at least $" + minIncrement);
 					return;
 				}
-	
+
 				// Sanity check. In-house testing revealed that people love bidding one trillion dollars.
 				if (userBid > 99999) {
 					alert("Remind me to apply for your job.");
 					return;
 				}
-	
+
 				// Add the new bid to the end of the currentPrice list
 				allWinningBids.push(userBid);
-				
+
 				//And do the same for the currentWinners list
 				var allWinners = item.get("currentWinners");
 				allWinners.push(userEmail);
-	   			    
+
 				// Slice off either the top n bids (for an item where the highest n bids win)
 				// or all of them if there are fewer than n bids.
 				var removedWinner = "";
 				if (allWinningBids.length > item.get("qty") ) {
 					var currentWinningBids = allWinningBids.slice(1);
-					var currentWinners = allWinners.slice(1); 
+					var currentWinners = allWinners.slice(1);
 					var removedWinner = allWinners[0];
 				}
 				else {
 					var currentWinningBids = allWinningBids;
-					var currentWinners = allWinners; 
+					var currentWinners = allWinners;
 				}
-	
+
 				// Add this bidder to the list of all bidders...
 				var allBidders = item.get("allBidders");
 				allBidders.push(userEmail);
-	
+
 				// ...and remove them if they're already there.
 				var uniqueArray = allBidders.filter(function(elem, pos) {
 					return allBidders.indexOf(elem) == pos;
 				});
-				
+
 				// If someone was pushed out of the winners list, add them to previousWinners
 				var previousWinners = item.get("previousWinners");
 				if ( !(removedWinner === "") ) {
@@ -130,13 +130,13 @@
 				//var uniqueArray2 = previousWinners.filter(function(elem, pos) {
 				//	previousWinners.indexOf(elem) == pos;
 				//});
-	
+
 				item.set("allBidders", uniqueArray);
 				item.set("currentPrice", currentWinningBids);
 				item.set("currentWinners", currentWinners);
 				item.set("previousWinners", previousWinners);
 				item.set("numberOfBids", item.get("numberOfBids")+1);
-	
+
 				// Save all these updates back to the Item.
 				item.save(null, {
 					success: function(item) {
@@ -148,7 +148,7 @@
 						response.error("Something went wrong - try again?");
 					}
 				});
-	
+
 				//Refresh the page so that new bid is registered
 				location.reload(forceGet = true);
 			},
@@ -157,12 +157,12 @@
 			    response.error("Error: " + error.code + " " + error.message);
 			}
 		});
-		  
+
 		return false;
 	}
-	
+
 	Parse.initialize("chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr", "B6EAGCyj0t2clP0xFyID1pMnnM40RBgrpS4m4izV");
-	
+
 	var thisItemID = "4Von0Iso2g";
     	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -178,7 +178,7 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-  	
+
   	var thisItemID = "F6dwBizQbs";
   	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -194,7 +194,7 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-  	
+
   	var thisItemID = "8BXVWkeiF0";
   	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -210,7 +210,7 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-  	
+
   	var thisItemID = "DTfrlv3wQU";
   	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -226,7 +226,7 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-  	
+
   	var thisItemID = "37NAUDjTzF";
   	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -242,7 +242,7 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-  	
+
   	var thisItemID = "jV6BlhQTbv";
   	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -258,9 +258,9 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-	
+
 	$.holdReady(false);
-	
+
 	$(document).ready( function() {
 		var afterHTML = "<div class='bid-email'><label for='email'>E-mail:</label><input type='text' id='email' name='user_email' /></div> <div class='bid-amt'><label for='bid'>Your bid:</label><input type='number' id='bid' name='user_bid' min=1 max=9999 /></div> <div class='bid-submit'><input type='submit' value='Place Bid!' /></div> </form>";
             	$('#portfolioModal').on('show.bs.modal', function (event) {
@@ -289,7 +289,7 @@
 		  	});
 		});
 	});
-	
+
     </script>
 
 </head>
@@ -316,7 +316,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a href="#page-top"></a>
+                        <a href="www.yalemedauction.org"></a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#event">Event</a>
@@ -350,7 +350,7 @@
                     <h3 class="section-subheading text-muted">Let the bidding begin!</h3>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-1" class="portfolio-link" data-toggle="modal" data-parseid="">
@@ -368,7 +368,7 @@
                         <p id="item-donor-1" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-2" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -385,7 +385,7 @@
                         <p id="item-donor-2" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-3" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -402,7 +402,7 @@
                         <p id="item-donor-3" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-4" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -419,7 +419,7 @@
                         <p id="item-donor-4" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-5" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -436,7 +436,7 @@
                         <p id="item-donor-5" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-6" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -453,12 +453,12 @@
                         <p id="item-donor-6" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
 
-    
+
     <!-- Portfolio Modal Template -->
     <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
@@ -476,15 +476,15 @@
                             <p class="donor item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="item-img img-responsive img-centered" src="default.png" alt="">
                             <p class="desc"><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            
+
                             <p class="quant"></p>
 			    <p class="price"></p>
 			    <p class="currWin"></p>
-                            
+
                             <!-- Insert form here -->
 			    <div class="bid-form">
 	                    </div>
-                            
+
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
