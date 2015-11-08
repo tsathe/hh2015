@@ -494,3 +494,7 @@ section#event {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.bid-email input textarea {
+    padding: 15px;
+}
