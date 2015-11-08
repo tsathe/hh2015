@@ -179,6 +179,8 @@
   	});
   	
   	var thisItemID = "F6dwBizQbs";
+  	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
   			$("#item-img-2").attr( "src", item.get("imageurl") );
@@ -192,6 +194,8 @@
   	});
   	
   	var thisItemID = "8BXVWkeiF0";
+  	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
   			$("#item-img-3").attr( "src", item.get("imageurl") );
@@ -205,6 +209,8 @@
   	});
   	
   	var thisItemID = "DTfrlv3wQU";
+  	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
   			$("#item-img-4").attr( "src", item.get("imageurl") );
@@ -218,6 +224,8 @@
   	});
   	
   	var thisItemID = "37NAUDjTzF";
+  	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
   			$("#item-img-5").attr( "src", item.get("imageurl") );
@@ -231,6 +239,8 @@
   	});
   	
   	var thisItemID = "jV6BlhQTbv";
+  	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(thisItemID, {
   		success: function(item) {
   			$("#item-img-6").attr( "src", item.get("imageurl") );
@@ -371,62 +381,70 @@
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal" data-parseid="d2IB1bLKKG">
+                    <a href="#portfolioModal" id="modal-link-3" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
+                            <img id="item-img-3" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+                        </div>
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4 id="item-name-3">Espresso Brownies</h4>
+                        <p id="item-donor-3" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal" id="modal-link-4" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
+                            <img id="item-img-4" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+                        </div>
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4 id="item-name-4">Espresso Brownies</h4>
+                        <p id="item-donor-4" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal" id="modal-link-5" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
+                            <img id="item-img-5" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+                        </div>
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4 id="item-name-5">Espresso Brownies</h4>
+                        <p id="item-donor-5" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal" id="modal-link-6" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
+                            <img id="item-img-6" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+                        </div>
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4 id="item-name-6">Espresso Brownies</h4>
+                        <p id="item-donor-6" class="text-muted">Alison Bonds</p>
                     </div>
                 </div>
                 
