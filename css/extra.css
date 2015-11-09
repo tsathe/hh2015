@@ -519,10 +519,7 @@ section#event {
     border-radius: 3px;
 }
 
-.portfolio-modal .bid-email input.form-control {
+.portfolio-modal .bid-email input.form-control,
+.portfolio-modal .bid-amt input.form-control {
     height: auto;
-}
-
-.portfolio-modal .form-group textarea.form-control {
-    height: 118px;
 }
