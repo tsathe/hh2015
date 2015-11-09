@@ -506,3 +506,20 @@ section#event {
 .bid-email .bid-amt input.form-control {
     height: auto;
 }
+
+.form-group .form-control {
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px;
+}
+
+.form-group input.form-control {
+    height: auto;
+}
+
+.form-group textarea.form-control {
+    height: 118px;
+}
