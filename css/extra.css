@@ -519,6 +519,7 @@ section#event {
 .form-group input,
 .form-group textarea {
     padding: 15px;
+    border-radius: 3px;
 }
 
 .form-group input.form-control {
