@@ -277,7 +277,7 @@
 	  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
 	  				modal.find('.item-img').attr( "src", item.get("imageurl") );
 	  				modal.find('.desc').html( item.get("description") );
-	  				modal.find('.quant').html( "<h4>Number Available</h4><br>" + "<h4 style="font-size:30px">" + item.get("qty") + "</h4>" );
+	  				modal.find('.quant').html( "<h4>Number Available</h4><br>" + "<h4 style='font-size:30px'>" + item.get("qty") + "</h4>" );
 	  				modal.find('.price').html( "<h4>Price</h4><br>$" + Math.max.apply(Math, item.get("currentPrice")) );
 	  				modal.find('.currWin').html( "<h4>Current Winners</h4><br>" + item.get("currentWinners") );
 	  				modal.find('.bid-form').html( "<form method='post' onsubmit='formSubmit(&quot;" + currID + "&quot;);'>" + afterHTML );
