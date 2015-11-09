@@ -277,9 +277,9 @@
 	  				modal.find('.donor').html( "Donated by " + item.get("donorname") );
 	  				modal.find('.item-img').attr( "src", item.get("imageurl") );
 	  				modal.find('.desc').html( item.get("description") );
-	  				modal.find('.quant').html( "<h4 class='service-heading'>Number Available</h4><br>" + "<p style='font-size:30px'>" + item.get("qty") + "</p>" );
-	  				modal.find('.price').html( "<h4 class='service-heading'>Price</h4><br>$" +  + "<p style='font-size:30px'>" + Math.max.apply(Math, item.get("currentPrice")) + "</p>" );
-	  				modal.find('.currWin').html( "<h4 class='service-heading'>Current Winners</h4><br>" + item.get("currentWinners") );
+	  				modal.find('.quant').html( "<h4>Number Available</h4><br>" + "<h4 style='font-size:30px'>" + item.get("qty") + "</h4>" );
+	  				modal.find('.price').html( "<h4>Price</h4><br><h4 style='font-size:30px'>" + Math.max.apply(Math, item.get("currentPrice")) + "</h4>" );
+	  				modal.find('.currWin').html( "<h4>Current Winners</h4><br>" + item.get("currentWinners") );
 	  				modal.find('.bid-form').html( "<form method='post' onsubmit='formSubmit(&quot;" + currID + "&quot;);'>" + afterHTML );
 		  		},
 		  		error: function(item, error) {
