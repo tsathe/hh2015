@@ -258,7 +258,7 @@
 	$.holdReady(false);
 
 	$(document).ready( function() {
-		var afterHTML = "<div class='row'><div class='.col-md-6'><div class='bid-email'><label for='email'>E-mail:</label><input type='text' class='form-control' id='email' name='user_email'/></div></div> <div class='.col-md-3'><div class='bid-amt'><label for='bid'>Your bid:</label><input type='number' class='form-control' id='bid' name='user_bid' min=1 max=9999 /></div></div> <div class='.col-md-3'><button type='submit' class='btn btn-xl'>Bid!</button></form></div></div>";
+		var afterHTML = "<div class='.col-md-6'><div class='bid-email'><label for='email'>E-mail:</label><input type='text' class='form-control' id='email' name='user_email'/></div></div> <div class='.col-md-3'><div class='bid-amt'><label for='bid'>Your bid:</label><input type='number' class='form-control' id='bid' name='user_bid' min=1 max=9999 /></div></div> <div class='.col-md-3'><button type='submit' class='btn btn-xl'>Bid!</button></form></div>";
             	$('#portfolioModal').on('show.bs.modal', function (event) {
  			var button = $(event.relatedTarget); // Button that triggered the modal
   			var currID = button.data('parseid'); // Extract info from data-* attributes
