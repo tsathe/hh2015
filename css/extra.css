@@ -515,6 +515,7 @@ section#event {
 .form-group input,
 .form-group textarea {
     padding: 15px;
+    -webkit-appearance: none;
     border-radius: 3px;
 }
 
