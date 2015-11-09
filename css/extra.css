@@ -512,17 +512,17 @@ section#event {
     margin-bottom: 25px;
 }
 
-.form-group input,
-.form-group textarea {
+.portfolio-modal .form-group input,
+.portfolio-modal .form-group textarea {
     padding: 15px;
     -webkit-appearance: none;
     border-radius: 3px;
 }
 
-.form-group input.form-control {
+.portfolio-modal .form-group input.form-control {
     height: auto;
 }
 
-.form-group textarea.form-control {
+.portfolio-modal .form-group textarea.form-control {
     height: 118px;
 }
