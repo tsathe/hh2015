@@ -163,76 +163,91 @@
 
 	Parse.initialize("chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr", "B6EAGCyj0t2clP0xFyID1pMnnM40RBgrpS4m4izV");
 
-	var thisItemID = "4Von0Iso2g";
+	var itemID1 = "4Von0Iso2g";
     	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
-  	itemQuery.get(thisItemID, {
+  	itemQuery.get(itemID1, {
   		success: function(item) {
   			if (item.get("imageurl").length > 0)
   				$("#item-img-1").attr( "src", item.get("imageurl") );
   			$("#item-name-1").html( item.get("name") );
   			$("#item-donor-1").html( item.get("donorname") );
-  			$("#modal-link-1").attr( "data-parseid", thisItemID );
+  			$("#modal-link-1").attr( "data-parseid", itemID1 );
   		},
   		error: function(item, error) {
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
 
-  	thisItemID = "F6dwBizQbs";
+  	var itemID2 = "F6dwBizQbs";
   	itemQuery = new Parse.Query(ItemObj);
-  	itemQuery.get(thisItemID, {
+  	itemQuery.get(itemID2, {
   		success: function(item) {
   			if (item.get("imageurl").length > 0)
   				$("#item-img-2").attr( "src", item.get("imageurl") );
   			$("#item-name-2").html( item.get("name") );
   			$("#item-donor-2").html( item.get("donorname") );
-  			$("#modal-link-2").attr( "data-parseid", thisItemID );
+  			$("#modal-link-2").attr( "data-parseid", itemID2 );
   		},
   		error: function(item, error) {
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
 
-  	thisItemID = "8BXVWkeiF0";
+  	var itemID3 = "8BXVWkeiF0";
   	itemQuery = new Parse.Query(ItemObj);
-  	itemQuery.get(thisItemID, {
+  	itemQuery.get(itemID3, {
   		success: function(item) {
   			if (item.get("imageurl").length > 0)
 	  			$("#item-img-3").attr( "src", item.get("imageurl") );
   			$("#item-name-3").html( item.get("name") );
   			$("#item-donor-3").html( item.get("donorname") );
-  			$("#modal-link-3").attr( "data-parseid", thisItemID );
+  			$("#modal-link-3").attr( "data-parseid", itemID3 );
   		},
   		error: function(item, error) {
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
 
-  	thisItemID = "DTfrlv3wQU";
+  	var itemID4 = "DTfrlv3wQU";
   	itemQuery = new Parse.Query(ItemObj);
-  	itemQuery.get(thisItemID, {
+  	itemQuery.get(itemID4, {
   		success: function(item) {
   			if (item.get("imageurl").length > 0)
   				$("#item-img-4").attr( "src", item.get("imageurl") );
   			$("#item-name-4").html( item.get("name") );
   			$("#item-donor-4").html( item.get("donorname") );
-  			$("#modal-link-4").attr( "data-parseid", thisItemID );
+  			$("#modal-link-4").attr( "data-parseid", itemID4 );
   		},
   		error: function(item, error) {
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
 
-  	thisItemID = "37NAUDjTzF";
+  	var itemID5 = "37NAUDjTzF";
   	itemQuery = new Parse.Query(ItemObj);
-  	itemQuery.get(thisItemID, {
+  	itemQuery.get(itemID5, {
   		success: function(item) {
   			if (item.get("imageurl").length > 0)
   				$("#item-img-5").attr( "src", item.get("imageurl") );
   			$("#item-name-5").html( item.get("name") );
   			$("#item-donor-5").html( item.get("donorname") );
-  			$("#modal-link-5").attr( "data-parseid", thisItemID );
+  			$("#modal-link-5").attr( "data-parseid", itemID5 );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
+  	
+  	var itemID6 = "jV6BlhQTbv";
+  	itemQuery = new Parse.Query(ItemObj);
+  	itemQuery.get(itemID6, {
+  		success: function(item) {
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-6").attr( "src", item.get("imageurl") );
+  			$("#item-name-6").html( item.get("name") );
+  			$("#item-donor-6").html( item.get("donorname") );
+  			$("#modal-link-6").attr( "data-parseid", itemID6 );
   		},
   		error: function(item, error) {
 	  		response.error("Error: " + error.code + " " + error.message);
