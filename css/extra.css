@@ -512,14 +512,14 @@ section#event {
     margin-bottom: 25px;
 }
 
-.portfolio-modal .form-group input,
-.portfolio-modal .form-group textarea {
+.portfolio-modal .bid-email input,
+.portfolio-modal .bid-amt input {
     padding: 15px;
     -webkit-appearance: none;
     border-radius: 3px;
 }
 
-.portfolio-modal .form-group input.form-control {
+.portfolio-modal .bid-email input.form-control {
     height: auto;
 }
 
