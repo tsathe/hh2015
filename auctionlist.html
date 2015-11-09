@@ -107,6 +107,10 @@
 					var currentWinners = allWinners.slice(1);
 					var removedWinner = allWinners[0];
 				}
+				else if (allWinners.length == 0 ) {
+					var currentWinningBids = userBid; //Account for "pre-bidding" price
+					var currentWinners = allWinners;
+				}
 				else {
 					var currentWinningBids = allWinningBids;
 					var currentWinners = allWinners;
