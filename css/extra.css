@@ -495,23 +495,6 @@ section#event {
     background-repeat: no-repeat;
 }
 
-.bid-email .bid-amt {
-    margin-bottom: 25px;
-}
-
-.bid-email .bid-amt input {
-    padding: 15px;
-}
-
-.bid-email .bid-amt input.form-control {
-    height: auto;
-}
-
-
-.form-group .form-control {
-    margin-bottom: 25px;
-}
-
 .portfolio-modal .bid-email input,
 .portfolio-modal .bid-amt input {
     padding: 15px;
