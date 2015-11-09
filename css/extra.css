@@ -517,3 +517,7 @@ section#event {
 .portfolio-modal .bid-amt input.form-control {
     height: auto;
 }
+
+.portfolio-modal btn-xl {
+    margin-top: 10px;
+}
