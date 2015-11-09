@@ -103,11 +103,13 @@
 				// or all of them if there are fewer than n bids.
 				var removedWinner = "";
 				if (allWinningBids.length > item.get("qty") ) {
+					alert("Long");
 					var currentWinningBids = allWinningBids.slice(1);
 					var currentWinners = allWinners.slice(1);
 					var removedWinner = allWinners[0];
 				}
 				else {
+					alert("Short");
 					var currentWinningBids = allWinningBids;
 					var currentWinners = allWinners;
 				}
