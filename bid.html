@@ -843,7 +843,7 @@
 	var itemID43 = "lMLkLOW2RD";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
-	itemQuery.get(itemID1, {
+	itemQuery.get(itemID43, {
 		success: function(item) {
 			if (item.get("imageurl").length > 0)
 				$("#item-img-43").attr( "src", item.get("imageurl") );
