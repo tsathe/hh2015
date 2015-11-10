@@ -530,3 +530,13 @@ section#event {
   line-height: 160%;
   letter-spacing: normal;
 }
+
+.portfolio-modal h2 {
+  font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 100%;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
