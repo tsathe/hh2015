@@ -43,38 +43,29 @@
 
     <!-- Connect to Parse -->
     <script type="text/javascript">
-
 	  $.holdReady(true);
-
 	  function formSubmit(itemID) {
-
 		event.preventDefault();
 		var userEmail = document.getElementById("email").value;
 		var userBid = parseInt(document.getElementById("bid").value, 10);
-
 		var ItemObj = Parse.Object.extend("Item");
 		var itemQuery = new Parse.Query(ItemObj);
 		itemQuery.get(itemID, {
 			success: function(item) {
-
 				if (!item)
 				 return;
-
 				var date = Date.now();
-
 				// Make sure bidding on this item hasn't closed.
 				if (date > item.get("closetime")) {
 					alert("Bidding for this item has ended.");
 					return;
 				}
-
 				// Make sure the bidder isn't already winning the item
 				var allWinners = item.get("currentWinners");
 				if (allWinners.indexOf(userEmail) > -1) {
 					alert("You are already one of the winners for this item!");
 					return;
 				}
-
 				// Make sure the bid increments current max bid by at least the minimum increment
 				var allWinningBids = item.get("currentPrice");
 	            		var minIncrement = item.get("priceIncrement");
@@ -85,20 +76,16 @@
 					alert("You need to raise the current price by at least $" + minIncrement);
 					return;
 				}
-
 				// Sanity check. In-house testing revealed that people love bidding one trillion dollars.
 				if (userBid > 99999) {
 					alert("Remind me to apply for your job.");
 					return;
 				}
-
 				// Add the new bid to the end of the currentPrice list
 				allWinningBids.push(userBid);
-
 				//And do the same for the currentWinners list
 				var allWinners = item.get("currentWinners");
 				allWinners.push(userEmail);
-
 				// Slice off either the top n bids (for an item where the highest n bids win)
 				// or all of them if there are fewer than n bids.
 				var removedWinner = "";
@@ -115,16 +102,13 @@
 					var currentWinningBids = allWinningBids;
 					var currentWinners = allWinners;
 				}
-
 				// Add this bidder to the list of all bidders...
 				var allBidders = item.get("allBidders");
 				allBidders.push(userEmail);
-
 				// ...and remove them if they're already there.
 				var uniqueArray = allBidders.filter(function(elem, pos) {
 					return allBidders.indexOf(elem) == pos;
 				});
-
 				// If someone was pushed out of the winners list, add them to previousWinners
 				var previousWinners = item.get("previousWinners");
 				if ( !(removedWinner === "") ) {
@@ -134,13 +118,11 @@
 				//var uniqueArray2 = previousWinners.filter(function(elem, pos) {
 				//	previousWinners.indexOf(elem) == pos;
 				//});
-
 				item.set("allBidders", uniqueArray);
 				item.set("currentPrice", currentWinningBids);
 				item.set("currentWinners", currentWinners);
 				item.set("previousWinners", previousWinners);
 				item.set("numberOfBids", item.get("numberOfBids")+1);
-
 				// Save all these updates back to the Item.
 				item.save(null, {
 					success: function(item) {
@@ -152,7 +134,6 @@
 						response.error("Something went wrong - try again?");
 					}
 				});
-
 				//Refresh the page so that new bid is registered
 				location.reload(forceGet = true);
 			},
@@ -161,12 +142,9 @@
 			    response.error("Error: " + error.code + " " + error.message);
 			}
 		});
-
 		return false;
 	}
-
 	Parse.initialize("chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr", "B6EAGCyj0t2clP0xFyID1pMnnM40RBgrpS4m4izV");
-
 	var itemID1 = "4Von0Iso2g";
     	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -182,7 +160,6 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-
 	var itemID2 = "10rXVASZGn";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -198,7 +175,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID3 = "1SwxiXe8Ky";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -214,7 +190,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID4 = "23bjYt6sn1";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -230,7 +205,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID5 = "37NAUDjTzF";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -246,7 +220,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID6 = "3aKijhGlLT";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -262,7 +235,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID7 = "7bGgMTGHig";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -278,7 +250,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID8 = "9SWrDCD8SE";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -294,7 +265,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID9 = "9exTqW136b";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -310,7 +280,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID10 = "BIC4HmLnYI";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -326,7 +295,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID11 = "BgoqohSjHc";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -342,7 +310,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID12 = "CqK1y7R6L6";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -358,7 +325,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID13 = "D0sEsajRRh";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -374,7 +340,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID14 = "DgM1FPUQjJ";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -390,7 +355,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID15 = "ECy6uD1sT1";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -406,7 +370,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID16 = "EQRgfcqY3f";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -422,7 +385,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID17 = "InNa7uKYQ1";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -438,7 +400,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID18 = "IoWpI1ZY5v";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -454,7 +415,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID19 = "JDjqefmTEk";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -470,7 +430,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID20 = "JjmkQEKTBS";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -486,7 +445,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID21 = "KDTguEH9Bs";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -502,7 +460,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID22 = "KNWY0mnGYj";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -518,7 +475,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID23 = "L0Fa7yrKzq";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -534,7 +490,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID24 = "LK8tMZ1hif";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -550,7 +505,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID25 = "LYSHgGwXLp";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -566,7 +520,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID26 = "OhINivWzaJ";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -582,7 +535,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID27 = "OtQVo4FotX";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -598,7 +550,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID28 = "RTDYdU59Vx";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -614,7 +565,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID29 = "Tb57jGaFLa";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -630,7 +580,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID30 = "W9WJbC0paN";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -646,7 +595,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID31 = "XDAGajkVza";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -662,8 +610,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
-
 	var itemID32 = "YC0VSQuS7w";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -679,7 +625,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID33 = "Z95tf2QiR7";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -695,7 +640,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID34 = "acVZMZjgfK";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -711,7 +655,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID35 = "b6AHi81c07";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -727,7 +670,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID36 = "bjXooKKrjR";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -743,7 +685,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID37 = "caQ1kazXEB";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -759,7 +700,6 @@
 	response.error("Error: " + error.code + " " + error.message);
 	}
 	});
-
 	var itemID38 = "hvlepTM3IQ";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -775,7 +715,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID39 = "iSxunckHOM";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -791,7 +730,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID40 = "ieE27bZBgd";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -807,7 +745,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID41 = "jV6BlhQTbv";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -823,7 +760,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID42 = "kjs9V9EWCm";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -839,7 +775,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID43 = "lMLkLOW2RD";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -855,7 +790,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID44 = "mZ7y1BHdCD";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -871,7 +805,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID45 = "mwliVezKLe";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -887,7 +820,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID46 = "oKKEFZfRpY";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -903,7 +835,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID47 = "oKNoPbhWnX";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -919,7 +850,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID48 = "oTcbf2CZFo";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -935,7 +865,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID49 = "rANTvKj4gU";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -951,7 +880,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID50 = "tGfiFlE4cv";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -967,7 +895,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID51 = "xRnpREarnO";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -983,7 +910,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID52 = "yDtQKgqFsO";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -999,7 +925,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID53 = "yINq62th5a";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1015,7 +940,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID54 = "yTOtSy6EL6";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1031,7 +955,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
 	var itemID55 = "zDFzvZ6TUB";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1047,8 +970,6 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-
-
   	var itemID56 = "F6dwBizQbs";
   	itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(itemID56, {
@@ -1063,7 +984,6 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-
   	var itemID57 = "8BXVWkeiF0";
   	itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(itemID57, {
@@ -1078,7 +998,6 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-
   	var itemID58 = "DTfrlv3wQU";
   	itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(itemID58, {
@@ -1093,7 +1012,6 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-
   	var itemID59 = "37NAUDjTzF";
   	itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(itemID59, {
@@ -1108,7 +1026,6 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-
   	var itemID60 = "jV6BlhQTbv";
   	itemQuery = new Parse.Query(ItemObj);
   	itemQuery.get(itemID60, {
@@ -1123,16 +1040,12 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-
-
 	$.holdReady(false);
-
 	$(document).ready( function() {
 		var afterHTML = "<div class='row'><div class='col-md-6'><div class='bid-email'><label for='email'>E-mail:</label><input type='text' class='form-control' id='email' name='user_email'></div></div> <div class='col-md-4'><div class='bid-amt'><label for='bid'>Your bid:</label><input type='number' class='form-control' id='bid' name='user_bid' min=1 max=9999></div></div> <div class='col-md-2'><button type='submit' class='btn btn-xl' style='margin-top: 20px'>Bid!</button></form></div></div>";
             	$('#portfolioModal').on('show.bs.modal', function (event) {
  			var button = $(event.relatedTarget); // Button that triggered the modal
   			var currID = button.data('parseid'); // Extract info from data-* attributes
-
   			// Update the modal's content.
   			var ItemObj = Parse.Object.extend("Item");
   			var itemQuery = new Parse.Query(ItemObj);
@@ -1155,7 +1068,6 @@
 		  	});
 		});
 	});
-
     </script>
 
 </head>
@@ -1227,7 +1139,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="height-wrap" style="height:241px;overflow:hidden">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
                             <img id="item-img-1" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
                         </div>
                     </a>
@@ -1244,7 +1156,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-2" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1261,7 +1173,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-3" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1278,7 +1190,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-4" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1295,7 +1207,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-5" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1312,7 +1224,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-6" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1329,7 +1241,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-7" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1346,7 +1258,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-8" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1363,7 +1275,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-9" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1380,7 +1292,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-10" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1397,7 +1309,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-11" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1414,7 +1326,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-12" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1431,7 +1343,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-13" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1448,7 +1360,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-14" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1465,7 +1377,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-15" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1482,7 +1394,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-16" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1499,7 +1411,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-17" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1516,7 +1428,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-18" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1533,7 +1445,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-19" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1550,7 +1462,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-20" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1567,7 +1479,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-21" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1584,7 +1496,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-22" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1601,7 +1513,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-23" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1618,7 +1530,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-24" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1635,7 +1547,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-25" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1652,7 +1564,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-26" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1669,7 +1581,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-27" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1686,7 +1598,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-28" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1703,7 +1615,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-29" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1720,7 +1632,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-30" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1737,7 +1649,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-31" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1754,7 +1666,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-32" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1771,7 +1683,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-33" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1788,7 +1700,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-34" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1805,7 +1717,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-35" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1822,7 +1734,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-36" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1839,7 +1751,7 @@
 		<i class="fa fa-plus fa-3x"></i>
 		</div>
 		</div>
-		<div class="height-wrap" style="height:241px;overflow:hidden">
+		<div class="height-wrap" style="max-height:241px;overflow:hidden">
 		<img id="item-img-37" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 		</div>
 		</a>
@@ -1856,7 +1768,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-38" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1873,7 +1785,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-39" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1890,7 +1802,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-40" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1907,7 +1819,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-41" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1924,7 +1836,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-42" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1941,7 +1853,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-43" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1958,7 +1870,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-44" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1975,7 +1887,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-45" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -1992,7 +1904,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-46" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2009,7 +1921,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-47" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2026,7 +1938,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-48" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2043,7 +1955,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-49" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2060,7 +1972,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-50" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2077,7 +1989,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-51" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2094,7 +2006,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-52" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2111,7 +2023,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-53" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2128,7 +2040,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-54" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2145,7 +2057,7 @@
 						<i class="fa fa-plus fa-3x"></i>
 					</div>
 				</div>
-				<div class="height-wrap" style="height:241px;overflow:hidden">
+				<div class="height-wrap" style="max-height:241px;overflow:hidden">
 					<img id="item-img-55" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
 				</div>
 			</a>
@@ -2162,7 +2074,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="height-wrap" style="height:241px;overflow:hidden">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
                             <img id="item-img-56" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
                         </div>
                     </a>
@@ -2179,7 +2091,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="height-wrap" style="height:241px;overflow:hidden">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
                             <img id="item-img-57" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
                         </div>
                     </a>
@@ -2196,7 +2108,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="height-wrap" style="height:241px;overflow:hidden">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
                             <img id="item-img-58" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
                         </div>
                     </a>
@@ -2213,7 +2125,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="height-wrap" style="height:241px;overflow:hidden">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
                             <img id="item-img-59" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
                         </div>
                     </a>
@@ -2230,7 +2142,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <div class="height-wrap" style="height:241px;overflow:hidden">
+                        <div class="height-wrap" style="max-height:241px;overflow:hidden">
                             <img id="item-img-60" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
                         </div>
                     </a>
