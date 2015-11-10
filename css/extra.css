@@ -521,3 +521,13 @@ section#event {
 .portfolio-modal btn-xl {
     margin-top: 40px;
 }
+
+.portfolio-modal h4 {
+  font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 900;
+  text-transform: none;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 160%;
+  letter-spacing: normal;
+}
