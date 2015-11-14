@@ -1425,6 +1425,134 @@
 		}
 	});
 	
+	var itemID85 = "2dFoUWT16z";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID85, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-85").attr( "src", item.get("imageurl") );
+			$("#item-name-85").html( item.get("name") );
+			$("#item-donor-85").html( item.get("donorname") );
+			$("#modal-link-85").attr( "data-parseid", itemID85 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID86 = "d4jRFidBfs";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID86, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-86").attr( "src", item.get("imageurl") );
+			$("#item-name-86").html( item.get("name") );
+			$("#item-donor-86").html( item.get("donorname") );
+			$("#modal-link-86").attr( "data-parseid", itemID86 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID87 = "APjITCdpXe";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID87, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-87").attr( "src", item.get("imageurl") );
+			$("#item-name-87").html( item.get("name") );
+			$("#item-donor-87").html( item.get("donorname") );
+			$("#modal-link-87").attr( "data-parseid", itemID87 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID88 = "37GF5EouC3";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID88, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-88").attr( "src", item.get("imageurl") );
+			$("#item-name-88").html( item.get("name") );
+			$("#item-donor-88").html( item.get("donorname") );
+			$("#modal-link-88").attr( "data-parseid", itemID88 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID89 = "9gD1CqAoGr";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID89, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-89").attr( "src", item.get("imageurl") );
+			$("#item-name-89").html( item.get("name") );
+			$("#item-donor-89").html( item.get("donorname") );
+			$("#modal-link-89").attr( "data-parseid", itemID89 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID90 = "ZswfCrEtRb";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID90, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-90").attr( "src", item.get("imageurl") );
+			$("#item-name-90").html( item.get("name") );
+			$("#item-donor-90").html( item.get("donorname") );
+			$("#modal-link-90").attr( "data-parseid", itemID90 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID91 = "fVaNo0uuHu";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID91, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-91").attr( "src", item.get("imageurl") );
+			$("#item-name-91").html( item.get("name") );
+			$("#item-donor-91").html( item.get("donorname") );
+			$("#modal-link-91").attr( "data-parseid", itemID91 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID92 = "kmvPspQE1D";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID92, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-92").attr( "src", item.get("imageurl") );
+			$("#item-name-92").html( item.get("name") );
+			$("#item-donor-92").html( item.get("donorname") );
+			$("#modal-link-92").attr( "data-parseid", itemID92 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
 	$.holdReady(false);
 	
 	$(document).ready( function() {
@@ -2945,11 +3073,148 @@
 						<p id="item-donor-84" class="text-muted">Loading...</p>
 					</div>
 				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-85" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-85" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-85">Loading...</h4>
+						<p id="item-donor-85" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-86" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-86" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-86">Loading...</h4>
+						<p id="item-donor-86" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-87" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-87" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-87">Loading...</h4>
+						<p id="item-donor-87" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-88" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-88" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-88">Loading...</h4>
+						<p id="item-donor-88" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-89" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-89" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-89">Loading...</h4>
+						<p id="item-donor-89" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-90" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-90" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-90">Loading...</h4>
+						<p id="item-donor-90" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-91" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-91" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-91">Loading...</h4>
+						<p id="item-donor-91" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-92" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-92" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-92">Loading...</h4>
+						<p id="item-donor-92" class="text-muted">Loading...</p>
+					</div>
+				</div>
 
             </div>
         </div>
     </section>
 
+	
 
     <!-- Portfolio Modal Template -->
     <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
