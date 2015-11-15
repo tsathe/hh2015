@@ -47,7 +47,17 @@
 	  function formSubmit(itemID) {
 		event.preventDefault();
 		var userEmail = document.getElementById("email").value;
+		if (userEmail === "") {
+			alert("No email entered!");
+			return;
+		}
+		
 		var userBid = parseInt(document.getElementById("bid").value, 10);
+		if (userBid === null){
+			alert("No bid entered!");
+			return;
+		}
+		
 		var ItemObj = Parse.Object.extend("Item");
 		var itemQuery = new Parse.Query(ItemObj);
 		itemQuery.get(itemID, {
