@@ -52,7 +52,9 @@
 			return;
 		}
 		
+		alert(document.getElementById("bid").value);
 		var userBid = parseInt(document.getElementById("bid").value, 10);
+		alert(userBid);
 		if (userBid == null | userBid == 0){
 			alert("No bid entered!");
 			return;
