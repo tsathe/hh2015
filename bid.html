@@ -53,7 +53,7 @@
 		}
 		
 		var userBid = parseInt(document.getElementById("bid").value, 10);
-		if (userBid === null){
+		if (userBid == null | userBid == 0){
 			alert("No bid entered!");
 			return;
 		}
