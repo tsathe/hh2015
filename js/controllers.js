@@ -28,7 +28,8 @@ auctionApp.controller('ItemCardsCtrl', function ($scope) {
                 var noBidCount = 0;
 
                 $scope.items.forEach(function(item) {
-                    var gross = 0;
+                    var create = item.createdAt;
+					var gross = 0;
                     item.currentPrice.forEach(function(bidprice) {
                         totalRaised = totalRaised + bidprice;
                         gross = gross + bidprice;

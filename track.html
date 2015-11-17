@@ -5,7 +5,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-    <script src="js/controllers.js"></script>
+    <script src="controllers.js"></script>
     <script src="client.js"></script>
 	<meta http-equiv="refresh" content="125">
     <title>Manage Auction</title>
@@ -227,7 +227,7 @@
             <div style="height: 3px; background: #777"></div>
 			<div class="boundary">
 				<div class="marquee" style="padding: 25px; color: #fff;">
-					<div ng-repeat="item in items | orderObjectBy:'gross'">
+					<div ng-repeat="item in items | orderObjectBy:'create'">
 					<span class="title">{{item.name}}<br/>
 					<span style="color: #aaa; font-size:16px">Donor: {{item.donorname}}</span>
 					</span><br/>
