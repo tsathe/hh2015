@@ -1706,7 +1706,119 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
+	
+	var itemID102 = "nPItQMeSjl";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID102, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-102").attr( "src", item.get("imageurl") );
+			$("#item-name-102").html( item.get("name") );
+			$("#item-donor-102").html( item.get("donorname") );
+			$("#modal-link-102").attr( "data-parseid", itemID102 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
 
+	var itemID103 = "ODivwS5ihh";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID103, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-103").attr( "src", item.get("imageurl") );
+			$("#item-name-103").html( item.get("name") );
+			$("#item-donor-103").html( item.get("donorname") );
+			$("#modal-link-103").attr( "data-parseid", itemID103 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID104 = "DGdFolRygO";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID104, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-104").attr( "src", item.get("imageurl") );
+			$("#item-name-104").html( item.get("name") );
+			$("#item-donor-104").html( item.get("donorname") );
+			$("#modal-link-104").attr( "data-parseid", itemID104 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID105 = "ZBUfF44LPH";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID105, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-105").attr( "src", item.get("imageurl") );
+			$("#item-name-105").html( item.get("name") );
+			$("#item-donor-105").html( item.get("donorname") );
+			$("#modal-link-105").attr( "data-parseid", itemID105 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID106 = "fzfYYL7Nh2";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID106, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-106").attr( "src", item.get("imageurl") );
+			$("#item-name-106").html( item.get("name") );
+			$("#item-donor-106").html( item.get("donorname") );
+			$("#modal-link-106").attr( "data-parseid", itemID106 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+	var itemID107 = "uh3vvYSx2w";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID107, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-107").attr( "src", item.get("imageurl") );
+			$("#item-name-107").html( item.get("name") );
+			$("#item-donor-107").html( item.get("donorname") );
+			$("#modal-link-107").attr( "data-parseid", itemID107 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+	
+	var itemID108 = "9iHecfnLf4";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID108, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-108").attr( "src", item.get("imageurl") );
+			$("#item-name-108").html( item.get("name") );
+			$("#item-donor-108").html( item.get("donorname") );
+			$("#modal-link-108").attr( "data-parseid", itemID108 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+	
 	$.holdReady(false);
 	
 	$(document).ready( function() {
@@ -3501,7 +3613,7 @@
 						<p id="item-donor-100" class="text-muted">Loading...</p>
 					</div>
 				</div>
-
+				
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-101" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3516,6 +3628,125 @@
 					<div class="portfolio-caption">
 						<h4 id="item-name-101">Loading...</h4>
 						<p id="item-donor-101" class="text-muted">Loading...</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-102" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-102" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-102">Loading...</h4>
+						<p id="item-donor-102" class="text-muted">Loading...</p>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-103" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-103" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-103">Loading...</h4>
+						<p id="item-donor-103" class="text-muted">Loading...</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-104" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-104" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-104">Loading...</h4>
+						<p id="item-donor-104" class="text-muted">Loading...</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-105" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-105" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-105">Loading...</h4>
+						<p id="item-donor-105" class="text-muted">Loading...</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-101" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-106" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-106">Loading...</h4>
+						<p id="item-donor-106" class="text-muted">Loading...</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-107" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-107" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-107">Loading...</h4>
+						<p id="item-donor-107" class="text-muted">Loading...</p>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a href="#portfolioModal" id="modal-link-108" class="portfolio-link" data-toggle="modal" data-parseid="">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content">
+								<i class="fa fa-plus fa-3x"></i>
+							</div>
+						</div>
+						<div class="height-wrap" style="max-height:241px;overflow:hidden">
+							<img id="item-img-108" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+						</div>
+					</a>
+					<div class="portfolio-caption">
+						<h4 id="item-name-108">Loading...</h4>
+						<p id="item-donor-108" class="text-muted">Loading...</p>
 					</div>
 				</div>
 
