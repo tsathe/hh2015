@@ -1819,6 +1819,102 @@
 		}
 	});
 
+  var itemID109 = "POwXluzGQN";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID109, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-109").attr( "src", item.get("imageurl") );
+			$("#item-name-109").html( item.get("name") );
+			$("#item-donor-109").html( item.get("donorname") );
+			$("#modal-link-109").attr( "data-parseid", itemID109 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+  var itemID110 = "cdpKG3AjCO";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID110, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-110").attr( "src", item.get("imageurl") );
+			$("#item-name-110").html( item.get("name") );
+			$("#item-donor-110").html( item.get("donorname") );
+			$("#modal-link-110").attr( "data-parseid", itemID110 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+  var itemID111 = "jpyhEq2xUy";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID111, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-111").attr( "src", item.get("imageurl") );
+			$("#item-name-111").html( item.get("name") );
+			$("#item-donor-111").html( item.get("donorname") );
+			$("#modal-link-111").attr( "data-parseid", itemID111 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+  var itemID112 = "OmDKQJIOdE";
+  var ItemObj = Parse.Object.extend("Item");
+  var itemQuery = new Parse.Query(ItemObj);
+  itemQuery.get(itemID112, {
+    success: function(item) {
+      if (item.get("imageurl").length > 0)
+        $("#item-img-112").attr( "src", item.get("imageurl") );
+      $("#item-name-112").html( item.get("name") );
+      $("#item-donor-112").html( item.get("donorname") );
+      $("#modal-link-112").attr( "data-parseid", itemID112 );
+    },
+    error: function(item, error) {
+      response.error("Error: " + error.code + " " + error.message);
+    }
+  });
+
+  var itemID113 = "b2mUo3vmf6";
+  var ItemObj = Parse.Object.extend("Item");
+  var itemQuery = new Parse.Query(ItemObj);
+  itemQuery.get(itemID113, {
+    success: function(item) {
+      if (item.get("imageurl").length > 0)
+        $("#item-img-113").attr( "src", item.get("imageurl") );
+      $("#item-name-113").html( item.get("name") );
+      $("#item-donor-113").html( item.get("donorname") );
+      $("#modal-link-113").attr( "data-parseid", itemID113 );
+    },
+    error: function(item, error) {
+      response.error("Error: " + error.code + " " + error.message);
+    }
+  });
+
+  var itemID114 = "bAbjkuu2su";
+  var ItemObj = Parse.Object.extend("Item");
+  var itemQuery = new Parse.Query(ItemObj);
+  itemQuery.get(itemID114, {
+    success: function(item) {
+      if (item.get("imageurl").length > 0)
+        $("#item-img-114").attr( "src", item.get("imageurl") );
+      $("#item-name-114").html( item.get("name") );
+      $("#item-donor-114").html( item.get("donorname") );
+      $("#modal-link-114").attr( "data-parseid", itemID114 );
+    },
+    error: function(item, error) {
+      response.error("Error: " + error.code + " " + error.message);
+    }
+  });
+
   	var itemID115 = "2loyGnHpGC";
     	var ItemObj = Parse.Object.extend("Item");
   	var itemQuery = new Parse.Query(ItemObj);
@@ -3813,6 +3909,108 @@
 						<p id="item-donor-108" class="text-muted">Loading...</p>
 					</div>
 				</div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-109" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-109" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-109">Loading...</h4>
+            <p id="item-donor-109" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-110" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-110" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-110">Loading...</h4>
+            <p id="item-donor-110" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-111" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-111" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-111">Loading...</h4>
+            <p id="item-donor-111" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-112" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-112" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-112">Loading...</h4>
+            <p id="item-donor-112" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-113" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-113" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-113">Loading...</h4>
+            <p id="item-donor-113" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-114" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-114" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-114">Loading...</h4>
+            <p id="item-donor-114" class="text-muted">Loading...</p>
+          </div>
+        </div>
 
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a href="#portfolioModal" id="modal-link-115" class="portfolio-link" data-toggle="modal" data-parseid="">
