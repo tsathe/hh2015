@@ -554,3 +554,26 @@ section#liveauction h5 {
 .liveitem {
   margin-bottom: 2em;
 }
+
+section#livetitle .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+section#livetitle .intro-text .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: 2px;
+}
+
+section#livetitle .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: lowercase;
+    font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 100%;
+}
