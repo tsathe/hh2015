@@ -542,7 +542,8 @@ section#event {
 }
 
 section#liveauction h4 {
-  line-height: normal;
+  line-height: 0.8;
+  margin-bottom: 0;
 }
 
 section#liveauction h5 {
