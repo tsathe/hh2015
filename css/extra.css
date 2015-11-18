@@ -543,6 +543,7 @@ section#event {
 
 section#liveauction h4 {
   line-height: 0.8;
+  margin-bottom: 0;
 }
 
 section#liveauction h5 {
@@ -551,5 +552,5 @@ section#liveauction h5 {
 }
 
 .liveitem {
-  margin-bottom: 10em;
+  margin-bottom: 2em;
 }
