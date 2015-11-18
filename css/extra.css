@@ -540,3 +540,11 @@ section#event {
   margin-top: 0;
   margin-bottom: 15px;
 }
+
+section#liveauction h4 {
+
+}
+
+section#liveauction h5 {
+  font-size: 14px;
+}
