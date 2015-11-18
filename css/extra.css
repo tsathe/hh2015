@@ -547,6 +547,12 @@ section#event {
   margin-bottom: 15px;
 }
 
+section#livetitle {
+  background-image: url(../img/event.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 section#liveauction h4 {
   margin-bottom: 0;
 }
