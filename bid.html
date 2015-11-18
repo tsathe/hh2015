@@ -51,13 +51,13 @@
 			alert("No email entered!");
 			return;
 		}
-		
+
 		var userBid = parseInt(document.getElementById("bid").value, 10);
 		if (isNaN(userBid)){
 			alert("No bid entered!");
 			return;
 		}
-		
+
 		var ItemObj = Parse.Object.extend("Item");
 		var itemQuery = new Parse.Query(ItemObj);
 		itemQuery.get(itemID, {
@@ -1050,7 +1050,7 @@
 	  		// response.error("Error: " + error.code + " " + error.message);
 		// }
   	// });
-	
+
 	var itemID61 = "05jyy4IImg";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1434,7 +1434,7 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-	
+
 	var itemID85 = "2dFoUWT16z";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1562,7 +1562,7 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-	
+
 	var itemID93 = "UhKzb9bIYq";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1706,7 +1706,7 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-	
+
 	var itemID102 = "nPItQMeSjl";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1802,7 +1802,7 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-	
+
 	var itemID108 = "9iHecfnLf4";
 	var ItemObj = Parse.Object.extend("Item");
 	var itemQuery = new Parse.Query(ItemObj);
@@ -1818,9 +1818,25 @@
 			response.error("Error: " + error.code + " " + error.message);
 		}
 	});
-	
+
+  var itemID115 = "2loyGnHpGC";
+    	var ItemObj = Parse.Object.extend("Item");
+  	var itemQuery = new Parse.Query(ItemObj);
+  	itemQuery.get(itemID115, {
+  		success: function(item) {
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-115").attr( "src", item.get("imageurl") );
+  			$("#item-name-115").html( item.get("name") );
+  			$("#item-donor-115").html( item.get("donorname") );
+  			$("#modal-link-115").attr( "data-parseid", itemID115 );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
+
 	$.holdReady(false);
-	
+
 	$(document).ready( function() {
 		var afterHTML = "<div class='row'><div class='col-md-6'><div class='bid-email'><label for='email'>E-mail:</label><input type='text' class='form-control' id='email' name='user_email'></div></div> <div class='col-md-4'><div class='bid-amt'><label for='bid'>Your bid:</label><input type='number' class='form-control' id='bid' name='user_bid' min=1 max=9999></div></div> <div class='col-md-2'><button type='submit' class='btn btn-xl' style='margin-top: 20px'>Bid!</button></form></div></div>";
             	$('#portfolioModal').on('show.bs.modal', function (event) {
@@ -1928,7 +1944,7 @@
                         <p id="item-donor-1" class="text-muted">Loading...</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-2" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -1945,7 +1961,7 @@
 				<p id="item-donor-2" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-3" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -1962,7 +1978,7 @@
 				<p id="item-donor-3" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-4" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -1979,7 +1995,7 @@
 				<p id="item-donor-4" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-5" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -1996,7 +2012,7 @@
 				<p id="item-donor-5" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-6" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2013,7 +2029,7 @@
 				<p id="item-donor-6" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-7" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2030,7 +2046,7 @@
 				<p id="item-donor-7" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-8" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2047,7 +2063,7 @@
 				<p id="item-donor-8" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-9" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2064,7 +2080,7 @@
 				<p id="item-donor-9" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-10" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2081,7 +2097,7 @@
 				<p id="item-donor-10" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-11" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2098,7 +2114,7 @@
 				<p id="item-donor-11" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-12" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2115,7 +2131,7 @@
 				<p id="item-donor-12" class="text-muted">Loading...</p>
 			</div>
 		</div>
-		
+
 		<div class="col-md-4 col-sm-6 portfolio-item">
 			<a href="#portfolioModal" id="modal-link-13" class="portfolio-link" data-toggle="modal" data-parseid="">
 				<div class="portfolio-hover">
@@ -2933,7 +2949,7 @@
                     </div>
                 </div>
 				-->
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-61" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3341,7 +3357,7 @@
 						<p id="item-donor-84" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-85" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3477,7 +3493,7 @@
 						<p id="item-donor-92" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-93" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3613,7 +3629,7 @@
 						<p id="item-donor-100" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-101" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3630,7 +3646,7 @@
 						<p id="item-donor-101" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-102" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3664,7 +3680,7 @@
 						<p id="item-donor-103" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-104" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3681,7 +3697,7 @@
 						<p id="item-donor-104" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-105" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3698,7 +3714,7 @@
 						<p id="item-donor-105" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-101" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3715,7 +3731,7 @@
 						<p id="item-donor-106" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-107" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3732,7 +3748,7 @@
 						<p id="item-donor-107" class="text-muted">Loading...</p>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a href="#portfolioModal" id="modal-link-108" class="portfolio-link" data-toggle="modal" data-parseid="">
 						<div class="portfolio-hover">
@@ -3750,11 +3766,28 @@
 					</div>
 				</div>
 
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-115" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-115" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-115">Loading...</h4>
+            <p id="item-donor-115" class="text-muted">Loading...</p>
+          </div>
+        </div>
+        
             </div>
         </div>
     </section>
 
-	
+
 
     <!-- Portfolio Modal Template -->
     <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
