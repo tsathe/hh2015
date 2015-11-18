@@ -8,10 +8,10 @@ auctionApp.controller('ItemCardsCtrl', function ($scope) {
     $.ajax({
         url: "https://api.parse.com/1/classes/Item",
         type: "GET",
-		data : {
+		data: {
 			limit : 200,
 			order : "createdAt",
-		}
+		},
         beforeSend: function(xhr){
             xhr.setRequestHeader('X-Parse-Application-Id', 'chABEeTQYArwMl0UQX1kC24rOzuYL30Ofxvx31Qr');
             xhr.setRequestHeader('X-Parse-REST-API-Key', 'uyCNcHptx1IHdG5U4s6EztURpWH0YFlW4UiwPdvW');
