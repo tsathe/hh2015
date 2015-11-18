@@ -1979,6 +1979,22 @@
 		}
 	});
 
+  var itemID119 = "BWc4xZuoiW";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID119, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-119").attr( "src", item.get("imageurl") );
+			$("#item-name-119").html( item.get("name") );
+			$("#item-donor-119").html( item.get("donorname") );
+			$("#modal-link-119").attr( "data-parseid", itemID119 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
 	$.holdReady(false);
 
 	$(document).ready( function() {
@@ -4077,6 +4093,23 @@
           <div class="portfolio-caption">
             <h4 id="item-name-118">Loading...</h4>
             <p id="item-donor-118" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-119" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-119" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-119">Loading...</h4>
+            <p id="item-donor-119" class="text-muted">Loading...</p>
           </div>
         </div>
             </div>
