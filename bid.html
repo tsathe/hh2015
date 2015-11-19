@@ -1022,20 +1022,20 @@
 	  		response.error("Error: " + error.code + " " + error.message);
 		}
   	});
-  	// var itemID59 = "37NAUDjTzF";
-  	// itemQuery = new Parse.Query(ItemObj);
-  	// itemQuery.get(itemID59, {
-  		// success: function(item) {
-  			// if (item.get("imageurl").length > 0)
-  				// $("#item-img-59").attr( "src", item.get("imageurl") );
-  			// $("#item-name-59").html( item.get("name") );
-  			// $("#item-donor-59").html( item.get("donorname") );
-  			// $("#modal-link-59").attr( "data-parseid", itemID59 );
-  		// },
-  		// error: function(item, error) {
-	  		// response.error("Error: " + error.code + " " + error.message);
-		// }
-  	// });
+  	var itemID59 = "XwPDf597ZM";
+  	itemQuery = new Parse.Query(ItemObj);
+  	itemQuery.get(itemID59, {
+  		success: function(item) {
+  			if (item.get("imageurl").length > 0)
+  				$("#item-img-59").attr( "src", item.get("imageurl") );
+  			$("#item-name-59").html( item.get("name") );
+  			$("#item-donor-59").html( item.get("donorname") );
+  			$("#modal-link-59").attr( "data-parseid", itemID59 );
+  		},
+  		error: function(item, error) {
+	  		response.error("Error: " + error.code + " " + error.message);
+		}
+  	});
   	// var itemID60 = "jV6BlhQTbv";
   	// itemQuery = new Parse.Query(ItemObj);
   	// itemQuery.get(itemID60, {
@@ -3122,7 +3122,7 @@
                     </div>
                 </div>
 
-				<!--
+				
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-59" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
@@ -3139,7 +3139,7 @@
                         <p id="item-donor-59" class="text-muted">Loading...</p>
                     </div>
                 </div>
-
+<!--
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal" id="modal-link-60" class="portfolio-link" data-toggle="modal" data-parseid="">
                         <div class="portfolio-hover">
