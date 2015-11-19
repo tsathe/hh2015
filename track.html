@@ -168,7 +168,7 @@
 			top: 6em;
 			position: relative;
 			box-sizing: border-box;
-			animation: marquee 140s linear infinite;
+			animation: marquee 135s linear infinite;
 		}
 		
 		.marquee:hover {
@@ -178,7 +178,7 @@
 		/* Make it move! */
 		@keyframes marquee {
 			0%   { top:   0em  }
-			100% { top: -900em } /* Change this if more items added */
+			100% { top: -920em } /* Change this if more items added */
 		}
     </style>
 
@@ -219,7 +219,7 @@
 <body ng-controller="ItemCardsCtrl">
 <div id="container">
     <div id="header">
-        AUCTION MONITORING
+        CURRENT HIGH BIDS (UPDATES EVERY 2 MINUTES)
     </div>
     <div id="content">
         <div class="card right">
