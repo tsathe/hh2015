@@ -1995,6 +1995,54 @@
 		}
 	});
 
+  var itemID120 = "wwjnhqPdG2";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID120, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-120").attr( "src", item.get("imageurl") );
+			$("#item-name-120").html( item.get("name") );
+			$("#item-donor-120").html( item.get("donorname") );
+			$("#modal-link-120").attr( "data-parseid", itemID120 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+  var itemID121 = "u6Fu2bzkPU";
+	var ItemObj = Parse.Object.extend("Item");
+	var itemQuery = new Parse.Query(ItemObj);
+	itemQuery.get(itemID121, {
+		success: function(item) {
+			if (item.get("imageurl").length > 0)
+				$("#item-img-121").attr( "src", item.get("imageurl") );
+			$("#item-name-121").html( item.get("name") );
+			$("#item-donor-121").html( item.get("donorname") );
+			$("#modal-link-121").attr( "data-parseid", itemID121 );
+		},
+		error: function(item, error) {
+			response.error("Error: " + error.code + " " + error.message);
+		}
+	});
+
+  var itemID122 = "6kHK4CV21N";
+  var ItemObj = Parse.Object.extend("Item");
+  var itemQuery = new Parse.Query(ItemObj);
+  itemQuery.get(itemID122, {
+    success: function(item) {
+      if (item.get("imageurl").length > 0)
+        $("#item-img-122").attr( "src", item.get("imageurl") );
+      $("#item-name-122").html( item.get("name") );
+      $("#item-donor-122").html( item.get("donorname") );
+      $("#modal-link-122").attr( "data-parseid", itemID122 );
+    },
+    error: function(item, error) {
+      response.error("Error: " + error.code + " " + error.message);
+    }
+  });
+
 	$.holdReady(false);
 
 	$(document).ready( function() {
@@ -4110,6 +4158,57 @@
           <div class="portfolio-caption">
             <h4 id="item-name-119">Loading...</h4>
             <p id="item-donor-119" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-120" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-120" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-120">Loading...</h4>
+            <p id="item-donor-120" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-121" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-121" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-121">Loading...</h4>
+            <p id="item-donor-121" class="text-muted">Loading...</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a href="#portfolioModal" id="modal-link-122" class="portfolio-link" data-toggle="modal" data-parseid="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <div class="height-wrap" style="max-height:241px;overflow:hidden">
+              <img id="item-img-122" src="img/portfolio/default-load.jpg" class="img-responsive" alt="">
+            </div>
+          </a>
+          <div class="portfolio-caption">
+            <h4 id="item-name-122">Loading...</h4>
+            <p id="item-donor-122" class="text-muted">Loading...</p>
           </div>
         </div>
             </div>
