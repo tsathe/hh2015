@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                  <img src="http://tsathe.github.io/hh2015/img/logo.png">
+                    <img src="http://tsathe.github.io/hh2015/img/logo.png">
                 </a>
             </div>
 
@@ -92,30 +92,23 @@
                 <div class="intro-lead-in">WELCOME TO THE 23RD ANNUAL</div>
                 <div class="intro-heading">hunger & <br> homelessness <br> auction</div>
                 <div class="row">
-                   <div class="col-md-3">
-                     <p>Power the auction</p>
-                     <a href="http://yalemedauction.org/bid" class="page-scroll btn btn-blue">Bid Now</a>
-                <!-- <a href="#event" class="page-scroll btn btn-blue">Learn More</a> -->
-                  </div>
-                   <div class="col-md-6">
-                     <p>Or make a cash donation</p>
-                      <form class="form-inline" method="POST" action="https://www.paypal.com/cgi-bin/webscr">
-                      <input type="hidden" name="business" value="YSM.HandH@gmail.com">
-                      <input type="hidden" name="item_name" value="H&H Auction 2016">
-                      <input type="hidden" name="cmd" value="_donations">
-                      <div class="form-group">
-                        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                        <div class="input-group">
-                          <div class="input-group-addon" style="background-color:transparent; color:#fff; border-color:#fff; border-width: 2px; font-size: 24px">$</div>
-                          <input type="text" class="form-control" name = "amount" id="exampleInputAmount" placeholder="" size="6" style="background-color:transparent; color:#fff; border-color:#fff; border-width: 2px; height: 56px; font-size: 24px;">
-                        </div>
-                      </div>
-                      <button type="submit" class="btn btn-xl">Go!</button>
-                    </form>
-                </div>
+                    <div class="col-md-3">
+                        <p>Power the auction</p>
+                        <a href="http://yalemedauction.org/bid" class="page-scroll btn btn-blue">Bid Now</a>
+                        <!-- <a href="#event" class="page-scroll btn btn-blue">Learn More</a> -->
+                    </div>
+                    <div class="col-md-6">
+                        <p>Or make a cash donation</p>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="VBZLT694E34Q2">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>
+                    </div>
 
-            </div>
-            <p style="margin-top:10px"> You can still donate items <a href="#donate">here.</a></p>
+                </div>
+                <p style="margin-top:10px"> You can still donate items <a href="#donate">here.</a></p>
             </div>
         </div>
     </header>
