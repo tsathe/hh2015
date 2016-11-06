@@ -478,10 +478,7 @@
 
                     <iframe name="submit_iframe" id="submit_iframe" style="display:none;" onload="if(typeof sent_form!='undefined'){window.location='thanks.html';}">
                     </iframe>
-
-
                     <form action="https://docs.google.com/forms/d/1rOJuMb3IAgCLml3Z76CG9cZU-U0mBt3YlKpiw_HiAW0/formResponse" method="POST" target="submit_iframe" onsubmit="sent_form=true"> <!--id="ss-form" target="_self" onsubmit=""> -->
-
                     <!--<form name="sentMessage" id="contactForm" novalidate>-->
                         <div class="row">
                             <div class="col-md-6">
@@ -495,10 +492,9 @@
                                     <input type="email" class="form-control" name="entry.1280681175" placeholder="" id="email" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
-
                                 <div class="form-group">
                                   <label for="affiliation">Affiliation</label>
-                                  <select class="form-control" name="entry.302424366" placeholder="Affiliation" id="affiliation" required data-validation-required-message="What is your affiliation?">
+                                  <select class="form-control" name="entry.302424366" placeholder="Affiliation" id="affiliation" required data-validation-required-message="What is your affiliation?"  >
                                       <option value=""></option>
                                       <option value="School of Medicine">School of Medicine</option>
                                       <option value="Physician Associate Program">Physician Associate Program</option>
@@ -508,9 +504,9 @@
                                   </select>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" style="display:none;">
                                   <label for="role">Role</label>
-                                  <select class="form-control" name="entry.587621793" placeholder="Role" id="role" required data-validation-required-message="What is your role?">
+                                  <select class="form-control" name="entry.587621793" placeholder="Role" id="role" required data-validation-required-message="What is your role?" value="Other">
                                       <option value=""></option>
                                       <option value="Student">Student</option>
                                       <option value="Faculty">Faculty</option>
